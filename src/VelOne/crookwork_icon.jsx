@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from 'react';
+import React, { useState } from 'react';
 import {IncCount, CurCount} from '../App.jsx'
 
 export default function BtnIcons(props){
@@ -9,14 +9,11 @@ export default function BtnIcons(props){
     const ltitle = `icn_${title}`;
     const count = CurCount();
 
-    useEffect(() => {
-        IncCount();
-    }, []);
-
     const handleClick = () => {
         if (ocjs) {
             ocjs();
         }
+        IncCount();
         toggleIcon();
     }
 
