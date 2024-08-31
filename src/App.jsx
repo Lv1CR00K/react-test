@@ -14,10 +14,10 @@ export default function App(){
         <h1>Testing for Icons in Crookwork</h1>
         {/* title="_nope" for no animation */}
         <div className='flex_row' style={{ padding : '30px' }}>
-            <BtnIcons title="menu" Mar="20px" />
-            <BtnIcons title="pass" Mar="20px" />
-            <BtnIcons title="mess" Mar="20px" />
-            <BtnIcons title="prof" Mar="20px" />
+            <BtnIcons title="menu" Mar="20" />
+            <BtnIcons title="pass" Mar="20" />
+            <BtnIcons title="mess" Mar="20" />
+            <BtnIcons title="prof" Mar="20" />
         </div>
     </>
     );
