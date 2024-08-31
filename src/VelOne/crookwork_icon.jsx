@@ -1,12 +1,12 @@
-import React, { useState, useEffect} from 'react';
-
+import React, { useState, useEffect, useRef} from 'react';
+let glIconCount = 0;
 export default function BtnIcons(props){
     const { title, ocjs, Mar, HW, bRad, bgpa } = props;
     
     const [checked, setChecked] = useState(false);
+    const isFirstRender = useRef(true);
     
     const ltitle = `icn_${title}`;
-    let globalCount = 0;
 
     const handleClick = () => {
         if (ocjs) {
@@ -22,10 +22,12 @@ export default function BtnIcons(props){
     };
 
     useEffect(() => {
-        globalCount += 1;
-        console.log(`BtnIcons has been instantiated ${globalCount} times`);
+        if (isFirstRender.current) {
+            isFirstRender.current = false;
+            glIconCount += 1;
+          }
       }, []); 
-    const count = globalCount;
+    const count = glIconCount;
     // useState and useEffect
 
     const styler = (val) => {
