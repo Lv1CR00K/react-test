@@ -1,3 +1,3 @@
 export default function App(){
-    return <h1>Test this page</h1>
+    return <h1>Ganda ni Kwistwin</h1>
 }
