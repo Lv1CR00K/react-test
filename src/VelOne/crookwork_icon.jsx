@@ -4,6 +4,7 @@ export default function BtnIcons(props){
     const { title, ocjs, Mar, HW, bRad, bgpa } = props;
     
     const [checked, setChecked] = useState(false);
+    const [count, setCount] = useState(glIconCount); // State to manage the count
     const isFirstRender = useRef(true);
     
     const ltitle = `icn_${title}`;
@@ -12,7 +13,6 @@ export default function BtnIcons(props){
         if (ocjs) {
             ocjs();
         }
-        IncCount();
         toggleIcon();
     }
 
@@ -21,13 +21,12 @@ export default function BtnIcons(props){
         setChecked(prevChecked => !prevChecked);
     };
 
-    const count = glIconCount;
     useEffect(() => {
         if (isFirstRender.current) {
             isFirstRender.current = false;
             glIconCount += 1;
+            setCount(glIconCount);
             console.log(glIconCount);
-            count = glIconCount;
           }
       }, []); 
     // useState and useEffect
