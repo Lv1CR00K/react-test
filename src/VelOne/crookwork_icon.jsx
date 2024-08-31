@@ -8,11 +8,6 @@ export default function BtnIcons(props){
     const ltitle = `icn_${title}`;
     const count = CurCount();
 
-    const plusCount = () => {
-        count+=1;
-        
-    }
-
     const handleClick = () => {
         if (ocjs) {
             ocjs();
