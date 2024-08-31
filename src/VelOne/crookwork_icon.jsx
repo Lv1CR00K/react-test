@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
-import {IncCount} from '../App.jsx'
+import {IncCount, CurCount} from '../App.jsx'
 
 export default function BtnIcons(props){
     const { title, ocjs, Mar, HW, bRad, bgpa } = props;
     const [checked, setChecked] = useState(false);
     
     const ltitle = `icn_${title}`;
+    const count = CurCount();
+
+    const plusCount = () => {
+        count+=1;
+        
+    }
 
     const handleClick = () => {
         if (ocjs) {
@@ -15,7 +21,7 @@ export default function BtnIcons(props){
     }
 
     const toggleIcon = () => {
-        setChecked(prevChecked => !prevChecked); // Toggle the checkbox state
+        setChecked(prevChecked => !prevChecked);
     };
 
     const styler = (val) => {
@@ -49,12 +55,13 @@ export default function BtnIcons(props){
     }
 
     return(
-        <label className={`label_icon_${title}`} htmlFor={`icon_check_`} onClick={handleClick} style={{ '--mar' : styler('m') }}>
-            <input type="checkbox" id={`icon_cross_`} />
-            <input type="checkbox" id={`icon_check_`} className={`chk_${title}`} data-value="someValue" />
+        <label className={`label_icon_${title}`} htmlFor={`icon_check_${count}`} onClick={handleClick} style={{ '--mar' : styler('m') }}>
+            <input type="checkbox" id={`icon_cross_${count}`} />
+            <input type="checkbox" id={`icon_check_${count}`} className={`chk_${title}`} data-value="someValue" />
             <div className={ltitle} style={{ '--HW': styler('hw'), '--bRad': styler('bRad'), '--BGPA': styler('bgpa') }}>
                 {/* insert the innerDiv() */}
                 {innerDiv()}
+                {IncCount()}
             </div>
         </label>
     );
