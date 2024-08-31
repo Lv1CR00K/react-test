@@ -1,27 +1,36 @@
+import React, { useState } from 'react';
 import {IncCount} from '../App.jsx'
-import './crookwork.js'
 
 export default function BtnIcons(props){
-    const title = props.title;
-    const ltitle = "icn_"+title;
+    const { title, ocjs, Mar, HW, bRad, bgpa } = props;
+    const [checked, setChecked] = useState(false);
+    
+    const ltitle = `icn_${title}`;
     const count = IncCount();
 
     const handleClick = () => {
-        if (props.ocjs) {
-            props.ocjs();
+        if (ocjs) {
+            ocjs();
         }
-        togle_icon(count);
+        toggleIcon(count);
     }
 
+    const toggleIcon = () => {
+        setChecked(prevChecked => !prevChecked); // Toggle the checkbox state
+    };
+
     const styler = (val) => {
-        if (val === "m") {
-            return props.Mar !== undefined ? `${props.Mar}px` : '0px';
-        } else if (val === "hw") {
-            return props.HW !== undefined ? `${props.HW}px` : '30px';
-        } else if (val === "bRad") {
-            return props.bRad !== undefined ? `${props.bRad}px` : '0px';
-        } else if (val === "bpga"){
-            return props.bgpa !== undefined ? `${props.bgpa}` : '#3d3d3d';
+        switch (val) {
+            case "m":
+                return Mar !== undefined ? `${Mar}px` : '0px';
+            case "hw":
+                return HW !== undefined ? `${HW}px` : '30px';
+            case "bRad":
+                return bRad !== undefined ? `${bRad}px` : '0px';
+            case "bpga":
+                return bgpa !== undefined ? `${bgpa}` : '#3d3d3d';
+            default:
+                return '';
         }
     }
 
@@ -44,7 +53,7 @@ export default function BtnIcons(props){
         <label className={`label_icon_${title}`} htmlFor={`icon_check_${count}`} onClick={handleClick} style={{ '--mar' : styler('m') }}>
             <input type="checkbox" id={`icon_cross_${count}`} />
             <input type="checkbox" id={`icon_check_${count}`} className={`chk_${title}`} data-value="someValue" />
-            <div className={ltitle} style={{ '--HW': styler('hw'), '--bRad': styler('bRad'), '--BGPA' : styler('bgpa') }}>
+            <div className={ltitle} style={{ '--HW': styler('hw'), '--bRad': styler('bRad'), '--BGPA': styler('bgpa') }}>
                 {/* insert the innerDiv() */}
                 {innerDiv()}
             </div>
