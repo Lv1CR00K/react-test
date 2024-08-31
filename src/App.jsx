@@ -15,9 +15,10 @@ export default function App(){
         {/* title="_nope" for no animation */}
         <div className='flex_row' style={{ padding : '30px' }}>
             <BtnIcons title="menu" Mar="20" />
-            <BtnIcons title="pass" Mar="20" />
-            <BtnIcons title="mess" Mar="20" />
-            <BtnIcons title="prof" Mar="20" />
+            <BtnIcons title="pass" Mar="20" bRad="15" bgpa="blue"/>
+            <BtnIcons title="mess" Mar="20"  bgpa="yellow"/>
+            <BtnIcons title="prof" Mar="20"  bRad="50" bgpa="red"/>
+            <BtnIcons title="bell" Mar="20"  bgpa="black" bRad="10"/>
         </div>
     </>
     );

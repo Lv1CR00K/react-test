@@ -29,6 +29,13 @@ export default function BtnIcons(props){
             return (<><div></div><div></div><div></div></>);
         }else if (title.includes("pass") || title.includes("mess") || title.includes("prof")){
             return (<><div></div><div></div></>);
+        }else if (title.includes("bell")){
+            return (
+                <svg style={{ '--HW': styler('hw') }} viewBox='0 0 100 100'>
+                  <path d='M0 70 L100 70 L100 60 Q80 50 80 30 Q80 0 50 0 Q20 0 20 30 Q20 50 0 60 Z'/>
+                  <path d='M35 75 A14 14 0 1 0 65 75 Z'/>
+                </svg>
+              );              
         }
     }
 
