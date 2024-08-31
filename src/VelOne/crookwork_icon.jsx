@@ -1,4 +1,5 @@
 import {IncCount} from '../App.jsx'
+import './crookwork.js'
 
 export default function BtnIcons(props){
     const title = props.title;

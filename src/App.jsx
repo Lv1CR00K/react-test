@@ -1,7 +1,7 @@
 import './VelOne/crookwork.css'
 import BtnIcons from './VelOne/crookwork_icon.jsx'
 
-let icon_counter = 1;
+let icon_counter = 0;
 export const IncCount = () => {
     icon_counter+=1;
     return icon_counter;
