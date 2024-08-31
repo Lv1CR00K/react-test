@@ -1,5 +1,5 @@
 import './VelOne/crookwork.css'
-import BtnIcons from '.VelOne/crookwork_icon.jsx'
+import BtnIcons from './VelOne/crookwork_icon.jsx'
 
 let icon_counter = 1;
 export const IncCount = () => {

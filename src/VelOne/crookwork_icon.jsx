@@ -33,10 +33,10 @@ export default function BtnIcons(props){
     }
 
     return(
-        <label className={`label_icon_${ltitle}`} htmlFor={`icon_check_${count}`} onClick={handleClick} style={{ '--mar' : styler('m') }}>
+        <label className={`label_icon_${title}`} htmlFor={`icon_check_${count}`} onClick={handleClick} style={{ '--mar' : styler('m') }}>
             <input type="checkbox" id={`icon_cross_${count}`} />
-            <input type="checkbox" id={`icon_check_${count}`} className={`chk_${ltitle}`} data-value="someValue" />
-            <div className={title} style={{ '--HW': styler('hw'), '--bRad': styler('bRad'), '--BGPA' : styler('bgpa') }}>
+            <input type="checkbox" id={`icon_check_${count}`} className={`chk_${title}`} data-value="someValue" />
+            <div className={ltitle} style={{ '--HW': styler('hw'), '--bRad': styler('bRad'), '--BGPA' : styler('bgpa') }}>
                 {/* insert the innerDiv() */}
                 {innerDiv()}
             </div>
