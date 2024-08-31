@@ -18,7 +18,7 @@ export default function App(){
         <div className='flex_row' style={{ padding : '30px' }}>
             <BtnIcons title="menu" Mar="20" />
             <BtnIcons title="pass" Mar="20" bRad="10" bgpa="blue"/>
-            <BtnIcons title="mess" Mar="20" bRad="15" bgpa="yellow"/>
+            <BtnIcons title="mess" Mar="20" bRad="15" bgpa="black"/>
             <BtnIcons title="prof" Mar="20" bRad="20" bgpa="red"/>
             <BtnIcons title="bell" Mar="20" bRad="25" bgpa="violet"/>
         </div>
