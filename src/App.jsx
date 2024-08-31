@@ -1,14 +1,6 @@
 import './VelOne/crookwork.css'
 import BtnIcons from './VelOne/crookwork_icon.jsx'
 
-let icon_counter = 1;
-export const CurCount = () => {
-    return icon_counter;
-}
-export const IncCount = () => {
-    icon_counter+=1;
-}
-
 export default function App(){
     // const handleIconClick = () => icon_click("crook", "main");
     return (

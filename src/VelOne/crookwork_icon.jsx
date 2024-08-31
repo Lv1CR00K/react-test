@@ -1,13 +1,10 @@
-import React, { useState } from 'react';
-import {IncCount, CurCount} from '../App.jsx'
+import React, { useState, useEffect} from 'react';
 
 export default function BtnIcons(props){
     const { title, ocjs, Mar, HW, bRad, bgpa } = props;
-    const [checked, setChecked] = useState(false);
     console.log(bgpa);
     
     const ltitle = `icn_${title}`;
-    const count = CurCount();
 
     const handleClick = () => {
         if (ocjs) {
@@ -17,9 +14,18 @@ export default function BtnIcons(props){
         toggleIcon();
     }
 
+    // useState and useEffect
+    const [checked, setChecked] = useState(false);
     const toggleIcon = () => {
         setChecked(prevChecked => !prevChecked);
     };
+
+    const reCount = useRef(0);
+    useEffect(() => {
+        reCount.current+=1;
+    })
+    const count = reCount.current;
+    // useState and useEffect
 
     const styler = (val) => {
         switch (val) {
