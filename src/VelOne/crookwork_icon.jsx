@@ -21,7 +21,7 @@ export default function BtnIcons(props){
         } else if (val === "bRad") {
             return props.bRad !== undefined ? `${props.bRad}px` : '0px';
         } else if (val === "bpga"){
-            return props.bgpa !== undefined ? props.bgpa : '#3d3d3d';
+            return props.bgpa !== undefined ? `${props.bgpa}` : '#3d3d3d';
         }
     }
 
