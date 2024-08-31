@@ -29,7 +29,7 @@ export default function BtnIcons(props){
             case "bRad":
                 return bRad !== undefined ? `${bRad}px` : '0px';
             case "bpga":
-                return bgpa !== undefined ? `${bgpa}` : '#3d3d3d';
+                return bgpa !== undefined ? bgpa : '#3d3d3d';
             default:
                 return '';
         }
