@@ -25,6 +25,7 @@ export default function BtnIcons(props){
         if (isFirstRender.current) {
             isFirstRender.current = false;
             glIconCount += 1;
+            console.log(glIconCount);
           }
       }, []); 
     const count = glIconCount;
