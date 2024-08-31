@@ -14,7 +14,7 @@ export default function BtnIcons(props){
 
     const styler = (val) => {
         if (val === "m") {
-            return props.M !== undefined ? `${props.Mar}px` : '0px';
+            return props.Mar !== undefined ? `${props.Mar}px` : '0px';
         } else if (val === "hw") {
             return props.HW !== undefined ? `${props.HW}px` : '30px';
         } else if (val === "bRad") {
