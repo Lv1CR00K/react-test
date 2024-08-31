@@ -2,9 +2,11 @@ import React, { useState, useEffect} from 'react';
 
 export default function BtnIcons(props){
     const { title, ocjs, Mar, HW, bRad, bgpa } = props;
-    console.log(bgpa);
+    
+    const [checked, setChecked] = useState(false);
     
     const ltitle = `icn_${title}`;
+    let globalCount = 0;
 
     const handleClick = () => {
         if (ocjs) {
@@ -15,16 +17,15 @@ export default function BtnIcons(props){
     }
 
     // useState and useEffect
-    const [checked, setChecked] = useState(false);
     const toggleIcon = () => {
         setChecked(prevChecked => !prevChecked);
     };
 
-    const reCount = useRef(0);
     useEffect(() => {
-        reCount.current+=1;
-    })
-    const count = reCount.current;
+        globalCount += 1;
+        console.log(`BtnIcons has been instantiated ${globalCount} times`);
+      }, []); 
+    const count = globalCount;
     // useState and useEffect
 
     const styler = (val) => {
