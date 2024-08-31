@@ -11,7 +11,7 @@ export default function App(){
     // const handleIconClick = () => icon_click("crook", "main");
     return (
     <>
-        <h1>Ganda ni Kwistwin</h1>
+        <h1>Testing for Icons in Crookwork</h1>
         {/* title="_nope" for no animation */}
         <BtnIcons title="menu" />
     </>
