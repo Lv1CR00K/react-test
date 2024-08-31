@@ -21,14 +21,15 @@ export default function BtnIcons(props){
         setChecked(prevChecked => !prevChecked);
     };
 
+    const count = glIconCount;
     useEffect(() => {
         if (isFirstRender.current) {
             isFirstRender.current = false;
             glIconCount += 1;
             console.log(glIconCount);
+            count = glIconCount;
           }
       }, []); 
-    const count = glIconCount;
     // useState and useEffect
 
     const styler = (val) => {
