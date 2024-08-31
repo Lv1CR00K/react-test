@@ -28,7 +28,7 @@ export default function BtnIcons(props){
                 return HW !== undefined ? `${HW}px` : '30px';
             case "bRad":
                 return bRad !== undefined ? `${bRad}px` : '0px';
-            case "bpga":
+            case "bgpa":
                 return bgpa !== undefined ? bgpa : '#3d3d3d';
             default:
                 return '';
@@ -37,9 +37,9 @@ export default function BtnIcons(props){
 
     const innerDiv = () => {
         if (title.includes("menu")){
-            return (<><div></div><div></div><div></div></>);
+            return (<><div/><div/><div/></>);
         }else if (title.includes("pass") || title.includes("mess") || title.includes("prof")){
-            return (<><div></div><div></div></>);
+            return (<><div/><div/></>);
         }else if (title.includes("bell")){
             return (
                 <svg style={{ '--HW': styler('hw') }} viewBox='0 0 100 100'>
