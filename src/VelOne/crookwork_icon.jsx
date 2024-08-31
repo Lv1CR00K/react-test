@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import {IncCount, CurCount} from '../App.jsx'
 
 export default function BtnIcons(props){
@@ -8,6 +8,10 @@ export default function BtnIcons(props){
     
     const ltitle = `icn_${title}`;
     const count = CurCount();
+
+    useEffect(() => {
+        IncCount();
+    }, []);
 
     const handleClick = () => {
         if (ocjs) {
@@ -57,7 +61,6 @@ export default function BtnIcons(props){
             <div className={ltitle} style={{ '--HW': styler('hw'), '--bRad': styler('bRad'), '--BGPA': styler('bgpa') }}>
                 {/* insert the innerDiv() */}
                 {innerDiv()}
-                {IncCount()}
             </div>
         </label>
     );
