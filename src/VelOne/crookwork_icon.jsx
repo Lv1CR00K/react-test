@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef} from 'react';
+import PropTypes from 'prop-types'
+
 let glIconCount = 0;
 export default function BtnIcons(props){
-    const { title, ocjs, Mar, HW, bRad, bgpa } = props;
+    const { type, ocjs, Mar, HW, bRad, bgpa } = props;
     
     const [checked, setChecked] = useState(false);
     const [count, setCount] = useState(glIconCount); // State to manage the count
     const isFirstRender = useRef(true);
-    
-    const ltitle = `icn_${title}`;
 
     const handleClick = () => {
         if (ocjs) {
@@ -26,7 +26,6 @@ export default function BtnIcons(props){
             isFirstRender.current = false;
             glIconCount += 1;
             setCount(glIconCount);
-            console.log(glIconCount);
           }
       }, []); 
     // useState and useEffect
@@ -46,29 +45,41 @@ export default function BtnIcons(props){
         }
     }
 
-    const innerDiv = () => {
-        if (title.includes("menu")){
-            return (<><div/><div/><div/></>);
-        }else if (title.includes("pass") || title.includes("mess") || title.includes("prof")){
-            return (<><div/><div/></>);
-        }else if (title.includes("bell")){
-            return (
-                <svg style={{ '--HW': styler('hw') }} viewBox='0 0 100 100'>
-                  <path d='M0 70 L100 70 L100 60 Q80 50 80 30 Q80 0 50 0 Q20 0 20 30 Q20 50 0 60 Z'/>
-                  <path d='M35 75 A14 14 0 1 0 65 75 Z'/>
-                </svg>
-              );              
+    // CHECKING IF TYPE IS EMPTY
+    if (!type){
+        console.log(`PLEASE ADD A 'type' PROPS!
+            types are ['menu', 'pass', 'mess', 'prof', 'bell']`);
+    }else {
+        const innerDiv = () => {
+                if (type.includes("menu")){
+                    return (<><div/><div/><div/></>);
+                }else if (type.includes("pass") || type.includes("mess") || type.includes("prof")){
+                    return (<><div/><div/></>);
+                }else if (type.includes("bell")){
+                    return (
+                        <svg style={{ '--HW': styler('hw') }} viewBox='0 0 100 100'>
+                            <path/>
+                            <path/>
+                        </svg>
+                    );              
+                }
         }
-    }
 
-    return(
-        <label className={`label_icon_${title}`} htmlFor={`icon_check_${count}`} onClick={handleClick} style={{ '--mar' : styler('m') }}>
-            <input type="checkbox" id={`icon_cross_${count}`} />
-            <input type="checkbox" id={`icon_check_${count}`} className={`chk_${title}`} data-value="someValue" />
-            <div className={ltitle} style={{ '--HW': styler('hw'), '--bRad': styler('bRad'), '--BGPA': styler('bgpa') }}>
-                {/* insert the innerDiv() */}
-                {innerDiv()}
-            </div>
-        </label>
-    );
+        return(
+            <label className={`label_icon_${type}`} htmlFor={`icon_check_${count}`} onClick={handleClick} style={{ '--mar' : styler('m') }}>
+                <input type="checkbox" id={`icon_cross_${count}`} />
+                <input type="checkbox" id={`icon_check_${count}`} className={`chk_${type}`} data-value="someValue" />
+                <div className={`icn_${type}`} style={{ '--HW': styler('hw'), '--bRad': styler('bRad'), '--BGPA': styler('bgpa') }}>
+                    {/* insert the innerDiv() */}
+                    {innerDiv()}
+                </div>
+            </label>
+        );
+    }
+    // CHECKING IF TYPE IS EMPTY
+}
+
+BtnIcons.propTypes = {
+    type: PropTypes.string.isRequired,
+    ocjs: PropTypes.func,
 }

@@ -302,10 +302,11 @@ h1{
 /* FOR TOGGLE PROFILE */
 
 /* FOR TOGGLE BELL */
-/* [class*="icn_bell"] svg path{
-    stroke: black;
-    stroke-width: 2px;
-} */
+[class*="icn_bell"] svg path:nth-child(1){
+    d: path("M0 70 L100 70 L100 60 Q80 50 80 30 Q80 0 50 0 Q20 0 20 30 Q20 50 0 60 Z");
+}[class*="icn_bell"] svg path:nth-child(2){
+    d: path("M30 75 A18 18 0 1 0 70 75 Z");
+}
 [id*="icon_check_"]:checked + .icn_bell path:nth-child(2){
     transform: translateX(25%);
 }[id*="icon_check_"]:checked + .icn_bell svg{
