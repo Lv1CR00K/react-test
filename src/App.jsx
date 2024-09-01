@@ -11,7 +11,8 @@ export default function App(){
         <div className='flex_row' style={{ padding : '30px' }}>
             <BtnIcons type='bell' Mar="10"/>
             <BtnIcons type='menu' Mar="10"/>
-            <BtnIcons type='mess' Mar="10" HW="30"/>
+            <BtnIcons type='mess' Mar="10"/>
+            <BtnIcons type='pass' Mar="10"/>
         </div>
     </>
     );
