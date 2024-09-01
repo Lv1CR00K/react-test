@@ -219,7 +219,7 @@ h1{
 }
 
 /* FOR TOGGLE MENU */
-[class*="icn_menu"] div{
+[class*="icn_menu"] path{
     flex: 1;
     margin: 2.5px;
     padding: 0px !important;

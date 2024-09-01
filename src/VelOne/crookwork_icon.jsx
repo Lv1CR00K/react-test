@@ -51,18 +51,24 @@ export default function BtnIcons(props){
             types are ['menu', 'pass', 'mess', 'prof', 'bell']`);
     }else {
         const innerDiv = () => {
-                if (type.includes("menu")){
-                    return (<><div/><div/><div/></>);
-                }else if (type.includes("pass") || type.includes("mess") || type.includes("prof")){
-                    return (<><div/><div/></>);
-                }else if (type.includes("bell")){
-                    return (
-                        <svg style={{ '--HW': styler('hw') }} viewBox='0 0 100 100'>
-                        <path d='M0 70 L100 70 L100 60 Q80 50 80 30 Q80 0 50 0 Q20 0 20 30 Q20 50 0 60 Z'/>
-                        <path d='M30 75 A18 18 0 1 0 70 75 Z'/>
-                        </svg>
-                    );              
-                }
+            let p1 = "", p2 = "", p3 = "";
+            if(type == "bell"){
+                p1 = "M0 70 L100 70 L100 60 Q80 50 80 30 Q80 0 50 0 Q20 0 20 30 Q20 50 0 60 Z";
+                p2 = "M30 75 A18 18 0 1 0 70 75 Z";
+            }else if (type == "menu"){
+                p1 = "M10 10";
+                p2 = "M10 10";
+                p3 = "";
+            }
+
+            return(
+                <svg style={{ '--HW': styler('hw') }} viewBox='0 0 100 100'>
+                    <path d={p1}/>
+                    <path d={p2}/>
+                    <path d={p3}/>
+                </svg>
+            );
+                
         }
 
         return(
