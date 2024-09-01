@@ -1,4 +1,3 @@
-import './VelOne/crookwork.css'
 import BtnIcons from './VelOne/crookwork_icon.jsx'
 import Validator from './VelOne/validator';
 

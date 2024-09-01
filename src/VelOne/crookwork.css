@@ -187,7 +187,7 @@ h1{
     background-color: var(--BGP);
     width: var(--HW) !important;
     height: var(--HW) !important;
-    padding: 10px !important;
+    padding: calc(var(--HW) * 0.33) !important;
     flex-direction: column;
     transition: 200ms all ease-in-out;
 }[class*="icn_"] div{
