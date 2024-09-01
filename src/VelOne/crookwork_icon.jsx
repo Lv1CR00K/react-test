@@ -68,6 +68,10 @@ export default function BtnIcons(props){
                 p2 = "M20 40 L80 40 Q90 40 90 50 L90 80 Q90 90 80 90 L20 90 Q10 90 10 80 L10 50 Q10 40 20 40";
                 p3 = "";
             }else if (type == "prof"){
+                p1 = "M50 45 A1 1 0 1 1 50 5 A1 1 0 1 1 50 45";
+                p2 = "M10 85 Q50 110 90 85 Q100 60 70 40 Q50 60 30 40 Q0 60 10 85";
+                p3 = "";
+            }else if (type == "home"){
                 p1 = "";
                 p2 = "";
                 p3 = "";

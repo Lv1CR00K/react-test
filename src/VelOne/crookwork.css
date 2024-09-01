@@ -248,7 +248,15 @@ h1{
 }
 /* FOR TOGGLE MESSAGE */
 
-/* FOR TOGGLE PROFILE */
+/* FOR TOGGLE BELL */
+[id*="icon_check_"]:checked + .icn_bell path:nth-child(2){
+    transform: translateX(25%);
+}[id*="icon_check_"]:checked + .icn_bell svg{
+    transform: rotateZ(35deg);
+}
+/* FOR TOGGLE BELL */
+
+/* FOR NON-TOGGLE PROFILE */
 [class*="icn_prof"] div{
     --bRadorss: 7px 5px;
     flex: 1;
@@ -262,15 +270,7 @@ h1{
     width: 100%;
     border-radius: 100000px 100000px 0px 0px;
 }
-/* FOR TOGGLE PROFILE */
-
-/* FOR TOGGLE BELL */
-[id*="icon_check_"]:checked + .icn_bell path:nth-child(2){
-    transform: translateX(25%);
-}[id*="icon_check_"]:checked + .icn_bell svg{
-    transform: rotateZ(35deg);
-}
-/* FOR TOGGLE BELL */
+/* FOR NON-TOGGLE PROFILE */
 /* ~~~~~~~~~~~ FOR ICONS ~~~~~~~~~~~ */
 /* --------------BUTTON STYLE-------------- */
 

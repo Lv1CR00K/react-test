@@ -13,6 +13,7 @@ export default function App(){
             <BtnIcons type='menu' Mar="10"/>
             <BtnIcons type='mess' Mar="10"/>
             <BtnIcons type='pass' Mar="10"/>
+            <BtnIcons type='prof' Mar="10"/>
         </div>
     </>
     );
