@@ -7,6 +7,7 @@ export default function App(){
     return (
     <>
         <h1>Testing for Icons in Crookwork</h1>
+        <h3>Libre mo ba to Jovs???? Kung libre mo, punta ako kahit mag antay ako isang oras.</h3>
         {/* title="_nope" for no animation */}
         <div className='flex_row' style={{ padding : '30px' }}>
             <BtnIcons type='bell' Mar="10"/>
