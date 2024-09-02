@@ -113,12 +113,16 @@ h1{
 }
 /*------------------ MEDIA VIEWER ------------------*/
 
-/*------------------ DIV STYLE ------------------*/
+
+/*------------------ HEADER FOOTER ------------------*/
 header{
     display: flex;
     align-items: center;
     padding: 0px 10px;
 }
+/*------------------ HEADER FOOTER ------------------*/
+
+/*------------------ DIV STYLE ------------------*/
 [class*="body_box"]{
     margin: 10px !important;
     display: flex;

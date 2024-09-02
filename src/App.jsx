@@ -7,7 +7,7 @@ import HeadsOne from './VelOne/components/h1.jsx'
 import './VelOne/crookwork.css'
 
 export default function App(){
-    const h1Texting = "MAGLABA KA NA!!!!!!!!!!!!!!!!!!";
+    const h1Texting = "PUKING INA MO FELIX!!!!!!!!!!!!!!!";
     return (
     <>
         <Header />
