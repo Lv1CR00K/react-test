@@ -1,0 +1,7 @@
+:root{
+    --grayBg: rgb(20, 18, 29) !important;
+    --borderValueWhite: solid 2px rgb(243, 135, 135) !important;
+    --textColorBlack: white !important;
+    --whiteBg: rgb(32, 29, 46) !important;
+    --shadowValue: 0px 10px 10px rgba(0, 0, 0, 0.384) !important;
+}

@@ -15,6 +15,9 @@ export default function Validator(type, val) {
                     const colorCheck = [/^#[0-9a-fA-F]{3}$/, /^#[0-9a-fA-F]{6}$/];
                     retVal = colorCheck.some(pattern => pattern.test(val));
                     break;
+                case "text":
+                    retVal = typeof val === 'string' ? true : false;
+                    break;
                 default:
                     retVal = false;
             }

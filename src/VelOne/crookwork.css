@@ -114,17 +114,31 @@ h1{
 /*------------------ MEDIA VIEWER ------------------*/
 
 /*------------------ DIV STYLE ------------------*/
+header{
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+}
 [class*="body_box"]{
     margin: 10px !important;
     display: flex;
     flex-direction: column;
     border-radius: var(--bRad);
 }
-.body_box_white{
+.body_box_bg{
+    background-color: var(--whiteBg);
+}.body_box_bg_shadow{
     background-color: var(--whiteBg);
     box-shadow: var(--shadowValue);
 }.body_box_border{
     border: var(--borderValueWhite);
+}.body_box_bg_border{
+    background-color: var(--whiteBg);
+    border: var(--borderValueWhite);
+}.body_box_bg_border_shadow{
+    background-color: var(--whiteBg);
+    border: var(--borderValueWhite);
+    box-shadow: var(--shadowValue);
 }
 /*------------------ DIV STYLE ------------------*/
 

@@ -5,6 +5,13 @@ import Validator from './validator.jsx'
 let glIconCount = 0;
 export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa }){
     // ONLY ACCEPTS HEX COLORS!!!!
+    // const handleIconClick = () => icon_click("crook", "main");
+    /*title="_nope" for no animation
+    <BtnIcons type='bell' Mar={10}/>
+    <BtnIcons type='menu' Mar={10} bRad={5} bgpa="#8b22ab"/>
+    <BtnIcons type='mess' Mar={10} bRad={10} bgpa="#a80a1a"/>
+    <BtnIcons type='pass' Mar={10} bRad={15} bgpa="#0e044f"/>
+    <BtnIcons type='prof' Mar={10} bRad={20} bgpa="#0a450a"/>*/
     const [checked, setChecked] = useState(false);
     const [count, setCount] = useState(glIconCount);
     const isFirstRender = useRef(true);
