@@ -4,4 +4,8 @@
     --textColorBlack: white !important;
     --whiteBg: rgb(32, 29, 46) !important;
     --shadowValue: 0px 10px 10px rgba(0, 0, 0, 0.384) !important;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }

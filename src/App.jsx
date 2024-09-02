@@ -7,26 +7,13 @@ import HeadsOne from './VelOne/components/h1.jsx'
 import './VelOne/crookwork.css'
 
 export default function App(){
-    const h1Texting = "PUKING INA MO FELIX!!!!!!!!!!!!!!!";
     return (
     <>
         <Header />
         <div className='flex_column' style={{alignItems : "center"}}>
-            <BoxBody rad={10}>
-                <HeadsOne text={h1Texting}/>
-            </BoxBody>
-            <BoxBody rad={10} type="BorBG">
-                <HeadsOne text={h1Texting}/>
-            </BoxBody>
-            <BoxBody rad={10} type="BorBGSha">
-                <HeadsOne text={h1Texting}/>
-            </BoxBody>
-            <BoxBody rad={10} type="BG">
-                <HeadsOne text={h1Texting}/>
-            </BoxBody>
-            <BoxBody rad={10} type="BGSha">
-                <HeadsOne text={h1Texting}/>
-            </BoxBody>
+        <BoxBody rad={10} type="BGSha">
+            <HeadsOne text="Test the BOX" type="h1"/>
+        </BoxBody>
         </div>
         <Footer />
     </>

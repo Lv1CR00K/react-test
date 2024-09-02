@@ -1,6 +1,18 @@
 import Validator from '../validator'
 
 export default function BoxBody( {type, rad, children} ) {
+    /* THIS IS THE TYPES!
+    <BoxBody rad={10}>
+    </BoxBody>
+    <BoxBody rad={10} type="BorBG">
+    </BoxBody>
+    <BoxBody rad={10} type="BorBGSha">
+    </BoxBody>
+    <BoxBody rad={10} type="BG">
+    </BoxBody>
+    <BoxBody rad={10} type="BGSha">
+    </BoxBody>*/
+
     let radius = Validator("num", rad) && rad ? `${rad}px` : "0px";
     let boxType = Validator("text", type) && type ? type : "Bor";
     let className = "body_box_border"

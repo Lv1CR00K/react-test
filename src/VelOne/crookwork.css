@@ -82,9 +82,9 @@ h1,h2,h3,h4,p{
     text-align: var(--tAl);
     padding: var(--pad);
     margin: var(--mar);
+    color: var(--textColorBlack);
 }
 h1{
-    color: var(--textColorBlack);
     font-size: var(--textBigSize);
 }[class*="border_"]{
     border-color: var(--bCol) !important;
@@ -119,6 +119,7 @@ header{
     display: flex;
     align-items: center;
     padding: 0px 10px;
+
 }
 /*------------------ HEADER FOOTER ------------------*/
 
