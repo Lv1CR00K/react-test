@@ -1,22 +1,28 @@
 import PropTypes from 'prop-types'
+export default function Validator(type, val) {
+    let retVal = false;
 
-export default function Validator(props){
-    const {type, val} = props;
     const typeValValidator = () => {
-        if(type && val){
-            switch (type){
+        if (type && val) {
+            switch (type) {
                 case "num":
-                    return !isNaN(val) && typeof val === 'number';
+                    retVal = typeof val === 'number' && !isNaN(val) ? true : false;
+                    break;
                 case "ary":
-                    return Array.isArray(val);
+                    retVal = Array.isArray(val);
+                    break;
                 case "col":
-                    const colPat = /^#[0-9A-Fa-f]{6}$/i;
-                    return colPat.test(val);
+                    const colorCheck = [/^#[0-9a-fA-F]{3}$/, /^#[0-9a-fA-F]{6}$/];
+                    retVal = colorCheck.some(pattern => pattern.test(val));
+                    break;
                 default:
-                    return false;
+                    retVal = false;
             }
         }
-    }
+        return retVal;
+    };
+
+    return typeValValidator();
 }
 
 Validator.propTypes = {
