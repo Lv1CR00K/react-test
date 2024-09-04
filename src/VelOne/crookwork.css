@@ -61,14 +61,19 @@ form{
 
 
 /*------------------ FLEX//GRID ------------------*/
-[class*="flex_"]{
-    display: flex;
+[class*="display_type_"]{
+    --cWidth: 100%;
     position: var(--pos);
-}.flex_row{
+    align-items: center;
+}[class*="display_type_"].child_width_adjust > div{
+    width: var(--cWidth);
+}.display_type_flex_row{
+    display: flex;
     flex-direction: row;
-}.flex_column{
+}.display_type_flex_column{
+    display: flex;
     flex-direction: column;
-}.grid_column{
+}.display_type_grid_column{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     position: var(--pos);
@@ -83,10 +88,7 @@ h1,h2,h3,h4,p{
     padding: var(--pad);
     margin: var(--mar);
     color: var(--textColorBlack);
-}
-h1{
-    font-size: var(--textBigSize);
-}[class*="border_"]{
+}[class*="cont_border_"]{
     border-color: var(--bCol) !important;
     border-radius: var(--bRad);
 }.cont_border_top{
