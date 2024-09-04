@@ -1,6 +1,6 @@
 import Validator from '../validator'
 
-export default function BoxBody( {type, rad, children} ) {
+export default function BoxBody( {type, rad, children, addClassName, objectStyle} ) {
     /* THIS IS THE TYPES!
     <BoxBody rad={10}>
     </BoxBody>
@@ -12,8 +12,14 @@ export default function BoxBody( {type, rad, children} ) {
     </BoxBody>
     <BoxBody rad={10} type="BGSha">
     </BoxBody>*/
-
-    let radius = Validator("num", rad) && rad ? `${rad}px` : "0px";
+    
+    let radius = Validator("num", rad) && rad ? {"--bRad": `${rad}px`} : {"--bRad": `0px`} ;
+    let objStyle = {...radius};
+    if(objectStyle){
+        objStyle = {...radius, ...objectStyle,};
+    }if(!addClassName){
+        addClassName = "";
+    }
     let boxType = Validator("text", type) && type ? type : "Bor";
     let className = "body_box_border"
     switch (boxType){
@@ -36,7 +42,7 @@ export default function BoxBody( {type, rad, children} ) {
             className = "body_box_border";
     }
     return(
-        <div className={className} style={{padding: "10px", "--bRad" : radius}}>
+        <div className={className+addClassName} style={objStyle}>
             {children}
         </div>
     );

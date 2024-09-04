@@ -10,27 +10,18 @@
     -ms-user-select: none;
 }
 
-.flexRowInside{
-    display: flex;
-    flex-direction: row;
-}.flexColInside{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}.pfp_pic{
-    border-radius: 20px;
-    width: 350px;
-    aspect-ratio: 1/1;
+.img_pfp{
+    width: 250px;
+    border-radius: 10px; 
+    box-sizing: border-box;
 }
 
-@media (max-width: 950px){
-    [class*="display_type_"].child_width_adjust > div{
-        width: calc(100% - 40px);
-    }
-    .flexRowInside{
+@media (max-width: 670px){
+    .profileMedia{
         flex-direction: column-reverse;
     }
-    .pfp_pic{
+    .img_pfp{
         width: 100%;
+        aspect-ratio: 1/1;
     }
 }
