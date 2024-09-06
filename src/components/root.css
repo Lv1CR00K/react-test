@@ -54,12 +54,14 @@ header{
     .menuButtonPorPolyo{
         display: block;
     }.menuTab{
+        padding: 40px 0px 0px 0px;
         display: block;
         position: fixed;
         background-color: rgb(62, 57, 87);
         height: 100%;
-        width: 100%;
+        width: 200px;
         z-index: 3;
+        touch-action: none;
         transform: translateY(0px) translateX(calc(-100% - 10px));
         top: 46.47px;
         transition: transform 200ms ease;
