@@ -1,15 +1,11 @@
 import Validator from '../validator'
 
-export default function TypeBody( {type, bWidth, children, cWidth, flexNum, objectStyle, addClassName} ) {
-    let flexVal = flexNum && Validator("num", flexNum) ? {flex: flexNum} : "";
+export default function TypeBody( {type, bWidth, children, cWidth, objectStyle, addClassName, addId} ) {
     let adjustWidth = bWidth ? " child_width_adjust" : "";
-    if(!bWidth){
-        bWidth = "100%";
-    }if(!cWidth){
-        cWidth = "100%";
-    }if(!addClassName){
-        addClassName = "";
-    }
+    bWidth = bWidth || "100%";
+    cWidth = cWidth || "100%";
+    addId = addId || "";
+    addClassName = addClassName || "";
     
     let objStyle = {"--bWidth" : bWidth, "--cWidth" : cWidth,};
     if(objectStyle){
@@ -35,7 +31,7 @@ export default function TypeBody( {type, bWidth, children, cWidth, flexNum, obje
                 break;
         }
         return(
-            <div className={displayType+adjustWidth+addClassName} style={objStyle}>
+            <div id={addId} className={displayType+adjustWidth+addClassName} style={objStyle}>
                 {children}
             </div>
         );

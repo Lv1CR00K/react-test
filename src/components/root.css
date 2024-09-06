@@ -1,14 +1,40 @@
+html{
+    scroll-behavior: smooth;
+}
 :root{
     --grayBg: rgb(20, 18, 29) !important;
-    --borderValueWhite: solid 2px rgb(243, 135, 135) !important;
-    --textColorBlack: white !important;
     --whiteBg: rgb(32, 29, 46) !important;
+    --txtColD: white;
+    --txtColL: black;
+    --borderValueUnset: 1px  rgb(62, 57, 87) solid !important;
+    --borderValueWhite: solid 2px  rgb(62, 57, 87) !important;
+    --textColorBlack: white !important;
     --shadowValue: 0px 10px 10px rgba(0, 0, 0, 0.192) !important;
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
 }
+
+
+/* HEADER */
+header{
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    background-color: var(--grayBg);
+    border-bottom: var(--borderValueUnset);
+    box-shadow: var(--shadowValue);
+}header > ul > li{
+    margin: 0px 5px;
+}header > ul > li > a{
+    padding: 12px 10px;
+}
+
+.menuButtonPorPolyo{
+    display: none;
+}
+/* HEADER */
 
 .img_pfp{
     width: 250px;
@@ -23,5 +49,21 @@
     .img_pfp{
         width: 100%;
         aspect-ratio: 1/1;
+    }
+}@media (max-width: 500px){
+    .menuButtonPorPolyo{
+        display: block;
+    }.menuTab{
+        display: block;
+        position: fixed;
+        background-color: rgb(62, 57, 87);
+        height: 100%;
+        width: 100%;
+        z-index: 3;
+        transform: translateY(0px) translateX(calc(-100% - 10px));
+        top: 46.47px;
+        transition: transform 200ms ease;
+    }.menuButtonPorPolyo:has(input:checked) ~ .menuTab {
+        transform: translateX(-10px);
     }
 }

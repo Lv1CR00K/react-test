@@ -3,15 +3,15 @@ import PropTypes from 'prop-types'
 import Validator from './validator.jsx'
 
 let glIconCount = 0;
-export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa }){
+export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName, objectStyle}){
     // ONLY ACCEPTS HEX COLORS!!!!
     // const handleIconClick = () => icon_click("crook", "main");
     /*title="_nope" for no animation
     <BtnIcons type='bell' Mar={10}/>
-    <BtnIcons type='menu' Mar={10} bRad={5} bgpa="#8b22ab"/>
-    <BtnIcons type='mess' Mar={10} bRad={10} bgpa="#a80a1a"/>
-    <BtnIcons type='pass' Mar={10} bRad={15} bgpa="#0e044f"/>
-    <BtnIcons type='prof' Mar={10} bRad={20} bgpa="#0a450a"/>*/
+    <BtnIcons type='menu' Mar={10}/>
+    <BtnIcons type='mess' Mar={10}/>
+    <BtnIcons type='pass' Mar={10}/>
+    <BtnIcons type='prof' Mar={10}/>*/
     const [checked, setChecked] = useState(false);
     const [count, setCount] = useState(glIconCount);
     const isFirstRender = useRef(true);
@@ -48,14 +48,15 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa }){
                 return Validator("num", Mar) && Mar? `${Mar}px` : '0px';
             case "hw":
                 return Validator("num", HW) && HW ? `${HW}px` : '30px';
-            case "bRad":
-                return Validator("num", bRad) && bRad ? `${bRad}px` : '0px';
-            case "bgpa":
-                return Validator("col", bgpa) && bgpa ? bgpa : '#3d3d3d';
             default:
-                return '';
+                return "";
         }
     }
+    addClassName = addClassName || "";
+    objectStyle = objectStyle || {};
+    HW = {'--HW': styler('hw')};
+    Mar = {'--mar' : styler('m')};
+    objectStyle = {...HW, ...objectStyle};
 
 
     // CHECKING IF TYPE IS EMPTY
@@ -122,7 +123,7 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa }){
             }
 
             return(
-                <svg style={{ '--HW': styler('hw') }} viewBox='0 0 100 100'>
+                <svg style={HW} viewBox='0 0 100 100'>
                     <path d={p1}/>
                     <path d={p2}/>
                     <path d={p3}/>
@@ -132,10 +133,9 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa }){
         }
 
         return(
-            <label className={`label_icon_${type}`} htmlFor={`icon_check_${count}`} onClick={handleClick} style={{ '--mar' : styler('m') }}>
-                <input type="checkbox" id={`icon_cross_${count}`} />
+            <label className={`label_icon_${type}${addClassName}`} htmlFor={`icon_check_${count}`} onClick={handleClick} style={Mar}>
                 <input type="checkbox" id={`icon_check_${count}`} className={`chk_${type}`} data-value="someValue" />
-                <div className={`icn_${type}`} style={{ '--HW': styler('hw'), '--bRad': styler('bRad'), '--BGPA': styler('bgpa') }}>
+                <div className={`icn_${type}`} style={objectStyle}>
                     {/* insert the innerDiv() */}
                     {innerDiv()}
                 </div>

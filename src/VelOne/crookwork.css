@@ -5,9 +5,8 @@
     --blackBg: black;
     --grayBg: rgb(238, 238, 238);
     --UnsetBg: blue;
-    --textColorBlack: black;
-    --textColorWhite: White;
-    --textColorUnset: blue;
+    --txtColD: black;
+    --txtColL: White;
     --textBigSize: 25px;
     --textMedSize: 20px;
     --textSmolSize: 15px;
@@ -34,6 +33,11 @@
     --BGC: black;
     --BGCA: white;
     /* FOR INSIDE CONTENTS */
+
+    /* FOR DISPLAY FLEX/GRID*/
+    --bWidth: 100%;   
+    --cWidth: 100%;
+    /* FOR DISPLAY FLEX/GRID*/
 }
 /*------------------ BODY ------------------*/
 
@@ -61,8 +65,6 @@ form{
 
 /*------------------ FLEX//GRID ------------------*/
 [class*="display_type_"]{
-    --bWidth: 100%;   
-    --cWidth: 100%;
     position: var(--pos);
     width: var(--bWidth);
     align-items: center;
@@ -77,7 +79,7 @@ form{
     flex-direction: column;
 }.display_type_grid_column{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     position: var(--pos);
     grid-auto-rows: min-content;
     width: var(--W);
@@ -89,7 +91,7 @@ h1,h2,h3,h4,p{
     text-align: var(--tAl);
     padding: var(--pad);
     margin: var(--mar);
-    color: var(--textColorBlack);
+    color: var(--txtColD);
 }[class*="cont_border_"]{
     border-color: var(--bCol) !important;
     border-radius: var(--bRad);
@@ -101,6 +103,10 @@ h1,h2,h3,h4,p{
     border-bottom: var(--borderValue);
 }.cont_border_left{
     border-left: var(--borderValue);
+}a{
+    text-align: var(--tAl);
+    color: var(--txtColD);
+    text-decoration: none;
 }
 /*------------------ TEXT ------------------*/
 
@@ -123,7 +129,13 @@ header{
     display: flex;
     align-items: center;
     padding: 0px 10px;
-
+    box-sizing: border-box;
+}header > ul{
+    display: flex;
+    flex: 1;
+    margin: 0px;
+    padding: 0px 60px 0px 0px;
+    justify-content: center;
 }
 /*------------------ HEADER FOOTER ------------------*/
 
@@ -161,38 +173,32 @@ header{
     justify-content: center;
     border: none;
     cursor: pointer;
-}
-.btn_white{
-    background-color: var(--whiteBg);
-    color: black;
-}.btn_white:hover{
-    background-color: rgb(233, 233, 233);
+}[class*="btn_"]:hover{
     transition: all 150ms ease-in-out;
 }
 
-.btn_blue{
-    background-color: blue;
-    color: var(--textColorWhite);
-    padding: 10px;
-}.btn_blue:hover{
+.btn_bg{
     background-color: var(--whiteBg);
-    color: black;
-    transition: all 150ms ease-in-out;
+    color: var(--txtColD);
+}.btn_bg:hover{
+    background-color: var(--blackBg);
+    color: var(--txtColL);
+}.btn_bg.active{
+    background-color: var(--blackBg);
+    color: var(--txtColL);
 }
 
-.btn_blue_round{
-    background-color: var(--UnsetBg);
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
-}.btn_blue_round:hover{
-    background-color:  var(--whiteBg);
-    color: black;
-    transition: all 150ms ease-in-out;
+.btn_underLine{
+    background-color: none;
+    color: var(--txtColD);
+}.btn_underLine:hover{
+    border-bottom: 1px solid var(--txtColD);
+}.btn_underLine.active{
+    border-bottom: 1px solid var(--txtColD);
 }
 
 /* ~~~~~~~~~~~ FOR ICONS ~~~~~~~~~~~ */
-[id*="icon_check_"], [id*="icon_cross_"]{
+[id*="icon_check_"]{
     display: none !important;
 }[class*="label_icon_"]{
     padding: 0px !important;
@@ -232,10 +238,6 @@ header{
     background-color: var(--BGPA);
 }[id*="icon_check_"]:not(:checked) + [class*="icn_"]{
     background-color: var(--BGP);
-}[id*="icon_check_"]:checked + [class*="icn_"] div{
-    background-color: var(--BGCA);
-}[id*="icon_check_"]:not(:checked) + [class*="icn_"] div{
-    background-color: var(--BGC);
 }[id*="icon_check_"]:checked + [class*="icn_"] svg path{
     fill: var(--BGCA);
 }[id*="icon_check_"]:not(:checked) + [class*="icn_"] svg path{
