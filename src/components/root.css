@@ -21,6 +21,7 @@ html{
 header{
     position: fixed;
     z-index: 2;
+    top: 0%;
     width: 100%;
     background-color: var(--grayBg);
     border-bottom: var(--borderValueUnset);
@@ -35,11 +36,15 @@ header{
     display: none;
 }
 /* HEADER */
-
 .img_pfp{
     width: 250px;
     border-radius: 10px; 
     box-sizing: border-box;
+}
+
+.middle_body{
+    margin-top: 46.94px !important;
+    height: calc(100vh - 46.94px);
 }
 
 @media (max-width: 670px){

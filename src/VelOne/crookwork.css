@@ -37,6 +37,7 @@
     /* FOR DISPLAY FLEX/GRID*/
     --bWidth: 100%;   
     --cWidth: 100%;
+    --gMin: 140px;
     /* FOR DISPLAY FLEX/GRID*/
 }
 /*------------------ BODY ------------------*/
@@ -79,7 +80,7 @@ form{
     flex-direction: column;
 }.display_type_grid_column{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--gMin), 1fr));
     position: var(--pos);
     grid-auto-rows: min-content;
     width: var(--W);
