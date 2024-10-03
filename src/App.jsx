@@ -11,7 +11,7 @@ import React, { useState, useEffect} from 'react'
 
 export default function App(){
     const arrayOfIcons = () => {
-        const typesOfIcons = ["menu", "mess", "bell", "pass", "prof", "home", "cale", "dashboard", "book"];
+        const typesOfIcons = ["menu", "mess", "bell", "pass", "bookmark", "heart", "prof", "home", "cale", "dashboard", "send", "trash", "edit", "at", "left", "top", "right", "bottom"];
 
         return(
             <>
@@ -89,7 +89,7 @@ export default function App(){
                 </>
             ) : (
                 <>
-                    <HeadsOne text="My Icons Styles" type="h3" objectStyle={{textAlign: "center"}}/>
+                    <HeadsOne text="VelOne Icons" type="h3" objectStyle={{textAlign: "center"}}/>
                     <BoxBody type="BG">
                         <TypeBody type={"grid"} objectStyle={{"--gMin": "65px"}}>
                             {arrayOfIcons()}

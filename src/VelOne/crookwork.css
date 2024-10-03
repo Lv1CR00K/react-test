@@ -298,6 +298,22 @@ header{
     border-radius: 100000px 100000px 0px 0px;
 }
 /* FOR NON-TOGGLE PROFILE */
+
+/* FOR NON-TOGGLE BOOKMARK */
+[id*="icon_check_"]:not(:checked) + .icn_bookmark path:nth-child(2){
+    fill: var(--BGP) !important;
+}[id*="icon_check_"]:checked + .icn_bookmark path:nth-child(2){
+    fill: var(--BGCA) !important;
+}
+/* FOR NON-TOGGLE BOOKMARK */
+
+/* FOR NON-TOGGLE HEART */
+[id*="icon_check_"]:not(:checked) + .icn_heart path:nth-child(2){
+    fill: var(--BGP) !important;
+}[id*="icon_check_"]:checked + .icn_heart path:nth-child(2){
+    fill: var(--BGCA) !important;
+}
+/* FOR NON-TOGGLE HEART */
 /* ~~~~~~~~~~~ FOR ICONS ~~~~~~~~~~~ */
 /* --------------BUTTON STYLE-------------- */
 
