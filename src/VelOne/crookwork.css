@@ -283,6 +283,33 @@ header{
 }
 /* FOR TOGGLE BELL */
 
+/* FOR TOGGLE ARROWS */
+.icn_left path:nth-child(1),
+.icn_right path:nth-child(1),
+.icn_top path:nth-child(1),
+.icn_bottom path:nth-child(1){
+    transform-origin: 50% 50%;
+}
+.icn_right path:nth-child(1){
+    transform: rotateZ(180deg);
+}.icn_top path:nth-child(1){
+    transform: rotateZ(90deg);
+}.icn_bottom path:nth-child(1){
+    transform: rotateZ(-90deg);
+}
+
+[id*="icon_check_"]:checked + .icn_left path:nth-child(1){
+    transform: rotateZ(180deg);
+}[id*="icon_check_"]:checked + .icn_right path:nth-child(1){
+    transform: rotateZ(360deg);
+}[id*="icon_check_"]:checked + .icn_top path:nth-child(1){
+    transform: rotateZ(-90deg);
+}[id*="icon_check_"]:checked + .icn_bottom path:nth-child(1){
+    transform: rotateZ(-270deg);
+}
+/* FOR TOGGLE ARROWS */
+
+
 /* FOR NON-TOGGLE PROFILE */
 [class*="icn_prof"] div{
     --bRadorss: 7px 5px;
@@ -315,13 +342,6 @@ header{
 }
 /* FOR NON-TOGGLE HEART */
 
-.icn_right path:nth-child(1){
-    transform: rotateZ(180deg) translate(-100%, -100%);
-}.icn_top path:nth-child(1){
-    transform: rotateZ(90deg) translate(0, -100%);
-}.icn_bottom path:nth-child(1){
-    transform: rotateZ(-90deg) translate(-100%, 0%);
-}
 /* ~~~~~~~~~~~ FOR ICONS ~~~~~~~~~~~ */
 /* --------------BUTTON STYLE-------------- */
 
