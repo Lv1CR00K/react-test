@@ -152,19 +152,19 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName
                 p2 = "M70 50A1 1 0 1 0 85 50 A35 35 0 1 0 75 75 A1 1 0 1 1 80 85 Q65 95 50 95 Q8 92 5 50 A1 1 0 1 1 95 50 A1 1 0 1 1 60 50";
                 p3 = "";
             }else if (type.includes("left")){
-                p1 = "";
+                p1 = "M25 45 L65 5 L75 15 L42 45 Q35 50 42 55 L75 85 L65 95 L25 55 Q15 50 25 45";
                 p2 = "";
                 p3 = "";
             }else if (type.includes("top")){
-                p1 = "";
+                p1 = "M25 45 L65 5 L75 15 L42 45 Q35 50 42 55 L75 85 L65 95 L25 55 Q15 50 25 45";
                 p2 = "";
                 p3 = "";
             }else if (type.includes("right")){
-                p1 = "";
+                p1 = "M25 45 L65 5 L75 15 L42 45 Q35 50 42 55 L75 85 L65 95 L25 55 Q15 50 25 45";
                 p2 = "";
                 p3 = "";
             }else if (type.includes("bottom")){
-                p1 = "";
+                p1 = "M25 45 L65 5 L75 15 L42 45 Q35 50 42 55 L75 85 L65 95 L25 55 Q15 50 25 45";
                 p2 = "";
                 p3 = "";
             }else if (type.includes("book")){

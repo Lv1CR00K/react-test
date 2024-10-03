@@ -314,6 +314,14 @@ header{
     fill: var(--BGCA) !important;
 }
 /* FOR NON-TOGGLE HEART */
+
+.icn_right path:nth-child(1){
+    transform: rotateZ(180deg) translate(-100%, -100%);
+}.icn_top path:nth-child(1){
+    transform: rotateZ(90deg) translate(0, -100%);
+}.icn_bottom path:nth-child(1){
+    transform: rotateZ(-90deg) translate(-100%, 0%);
+}
 /* ~~~~~~~~~~~ FOR ICONS ~~~~~~~~~~~ */
 /* --------------BUTTON STYLE-------------- */
 
