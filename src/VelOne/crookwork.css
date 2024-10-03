@@ -284,17 +284,17 @@ header{
 /* FOR TOGGLE BELL */
 
 /* FOR TOGGLE ARROWS */
-.icn_left path:nth-child(1),
-.icn_right path:nth-child(1),
-.icn_top path:nth-child(1),
-.icn_bottom path:nth-child(1){
+[class*="icn_left"] path:nth-child(1),
+[class*="icn_right"] path:nth-child(1),
+[class*="icn_top"] path:nth-child(1),
+[class*="icn_bottom"] path:nth-child(1){
     transform-origin: 50% 50%;
 }
-.icn_right path:nth-child(1){
+[class*="icn_right"] path:nth-child(1){
     transform: rotateZ(180deg);
-}.icn_top path:nth-child(1){
+}[class*="icn_top"] path:nth-child(1){
     transform: rotateZ(90deg);
-}.icn_bottom path:nth-child(1){
+}[class*="icn_bottom"] path:nth-child(1){
     transform: rotateZ(-90deg);
 }
 
