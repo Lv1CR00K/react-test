@@ -167,11 +167,27 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName
                 p1 = "M25 45 L65 5 L75 15 L42 45 Q35 50 42 55 L75 85 L65 95 L25 55 Q15 50 25 45";
                 p2 = "";
                 p3 = "";
-            }else if (type.includes("book")){
-                p1 = "";
+            }else if (type.includes("info")){
+                p1 = "M5 50 A1 1 0 1 1 95 50 A1 1 0 1 1 5 50 L15 50 A1 1 0 1 0 85 50 A1 1 0 1 0 15 50";
+                p2 = "M50 25 A1 1 0 1 1 50 35 A1 1 0 1 1 50 25";
+                p3 = "M45 45 A1 1 0 1 1 55 45 L55 70 A1 1 0 1 1 45 70";
+            }else if (type.includes("logout")){
+                p1 = "M10 5 L45 5 Q50 5 50 10 L50 30 A1 1 0 1 1 40 30 L40 20 Q40 15 35 15 L20 15 Q15 15 15 20 L15 80 Q15 85 20 85 L35 85 Q40 85 40 80 L40 70 A1 1 0 1 1 50 70 L50 90 Q50 95 45 95 L10 95 Q5 95 5 90 L5 10 Q5 5 10 5";
+                p2 = "M30 45 A1 1 0 1 0 30 55 L75 55 A1 1 0 1 0 75 45";
+                p3 = "M75 35 A1 1 0 1 1 75 65 A1 1 0 1 0 75 75 A1 1 0 1 0 75 25 A1 1 0 1 0 75 35";
+            }else if (type.includes("download")){
+                p1 = "M5 65 A1 1 0 1 1 15 65 L15 80 Q15 85 20 85 L80 85 Q85 85 85 80 L85 65 A1 1 0 1 1 95 65 L95 90 Q95 95 90 95 L10 95 Q5 95 5 90";
+                p2 = "M50 75 L75 65 L75 55 L55 62 L55 10 A1 1 0 1 0 45 10 L45 62 L25 55 L25 65";
+                p3 = "";
+            }else if (type.includes("add")){
+                p1 = "M15 45 L85 45 A1 1 0 1 1 85 55 L15 55 A1 1 0 1 1 15 45";
+                p2 = "M45 15 L45 85 A1 1 0 1 0 55 85 L55 15 A1 1 0 1 0 45 15";
+                p3 = "";
+            }else if (type.includes("minus")){
+                p1 = "M15 45 L85 45 A1 1 0 1 1 85 55 L15 55 A1 1 0 1 1 15 45";
                 p2 = "";
                 p3 = "";
-            }else if (type.includes("react")){
+            }else if (type.includes("book")){
                 p1 = "";
                 p2 = "";
                 p3 = "";
