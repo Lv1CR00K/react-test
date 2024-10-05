@@ -98,6 +98,7 @@ export default function App(){
                     </BoxBody>
                 </>
             )}
+            <div style={{padding: "2.5px"}}></div>
             </TypeBody>
         </div>
         <Footer />
