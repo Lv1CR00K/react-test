@@ -11,7 +11,8 @@ import React, { useState, useEffect} from 'react'
 
 export default function App(){
     const arrayOfIcons = () => {
-        const typesOfIcons = ["menu", "mess", "bell", "pass", "left", "top", "right", "bottom", "bookmark", "heart", "prof", "home", "cale", "dashboard", "send", "trash", "edit", "at", "info", "logout", "download", "add", "minus"];
+        const typesOfIcons = ["menu", "mess", "bell", "pass", "left", "top", "right", "bottom", "bookmark", "heart", "add", "minus", "smallAdd", "smallMinus", "roundAdd", "roundMinus",
+            "times", "roundTimes", "search", "prof", "home", "cale", "dashboard", "send", "trash", "edit", "atEmail", "info", "location", "logout", "download"];
 
         return(
             <>

@@ -147,7 +147,7 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName
                 p1 = "M15 5 L50 5 A1 1 0 1 1 50 15 L20 15 Q15 15 15 20 L15 80 Q15 85 25 85 L80 85 Q85 85 85 80 L85 45 A1 1 0 1 1 95 45 L95 85 Q95 95 85 95 L15 95 Q5 95 5 85 L5 15 Q5 5 15 5";
                 p2 = "M65 15 A1 1 0 1 1 85 35 L45 75 L25 75 25 55";
                 p3 = "";
-            }else if (type.includes("at")){
+            }else if (type.includes("atEmail")){
                 p1 = "M30 50 A1 1 0 1 1 70 50 A1 1 0 1 1 30 50 L40 50 A1 1 0 1 0 60 50 A1 1 0 1 0 40 50";
                 p2 = "M70 50A1 1 0 1 0 85 50 A35 35 0 1 0 75 75 A1 1 0 1 1 80 85 Q65 95 50 95 Q8 92 5 50 A1 1 0 1 1 95 50 A1 1 0 1 1 60 50";
                 p3 = "";
@@ -185,7 +185,39 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName
                 p3 = "";
             }else if (type.includes("minus")){
                 p1 = "M15 45 L85 45 A1 1 0 1 1 85 55 L15 55 A1 1 0 1 1 15 45";
-                p2 = "";
+                p2 = "M45 15 L45 85 A1 1 0 1 0 55 85 L55 15 A1 1 0 1 0 45 15";
+                p3 = "";
+            }else if (type.includes("times")){
+                p1 = "M15 45 L85 45 A1 1 0 1 1 85 55 L15 55 A1 1 0 1 1 15 45";
+                p2 = "M45 15 L45 85 A1 1 0 1 0 55 85 L55 15 A1 1 0 1 0 45 15";
+                p3 = "";
+            }else if (type.includes("smallAdd")){
+                p1 = "M30 45 L70 45 A1 1 0 1 1 70 55 L30 55 A1 1 0 1 1 30 45";
+                p2 = "M45 30 L45 70 A1 1 0 1 0 55 70 L55 30 A1 1 0 1 0 45 30";
+                p3 = "";
+            }else if (type.includes("smallMinus")){
+                p1 = "M30 45 L70 45 A1 1 0 1 1 70 55 L30 55 A1 1 0 1 1 30 45";
+                p2 = "M45 30 L45 70 A1 1 0 1 0 55 70 L55 30 A1 1 0 1 0 45 30";
+                p3 = "";
+            }else if (type.includes("roundAdd")){
+                p1 = "M30 45 L70 45 A1 1 0 1 1 70 55 L30 55 A1 1 0 1 1 30 45";
+                p2 = "M45 30 L45 70 A1 1 0 1 0 55 70 L55 30 A1 1 0 1 0 45 30";
+                p3 = "M5 50 A1 1 0 1 1 95 50 A1 1 0 1 1 5 50 L15 50 A1 1 0 1 0 85 50 A1 1 0 1 0 15 50";
+            }else if (type.includes("roundMinus")){
+                p1 = "M30 45 L70 45 A1 1 0 1 1 70 55 L30 55 A1 1 0 1 1 30 45";
+                p2 = "M45 30 L45 70 A1 1 0 1 0 55 70 L55 30 A1 1 0 1 0 45 30";
+                p3 = "M5 50 A1 1 0 1 1 95 50 A1 1 0 1 1 5 50 L15 50 A1 1 0 1 0 85 50 A1 1 0 1 0 15 50";
+            }else if (type.includes("roundTimes")){
+                p1 = "M30 45 L70 45 A1 1 0 1 1 70 55 L30 55 A1 1 0 1 1 30 45";
+                p2 = "M45 30 L45 70 A1 1 0 1 0 55 70 L55 30 A1 1 0 1 0 45 30";
+                p3 = "M5 50 A1 1 0 1 1 95 50 A1 1 0 1 1 5 50 L15 50 A1 1 0 1 0 85 50 A1 1 0 1 0 15 50";
+            }else if (type.includes("search")){
+                p1 = "M5 45 A1 1 0 1 1 80 45 A1 1 0 1 1 5 45 L15 45 A1 1 0 1 0 70 45 A1 1 0 1 0 15 45";
+                p2 = "M85 95 L65 80 L80 65 L95 85 Q95 95 85 95";
+                p3 = "";
+            }else if (type.includes("location")){
+                p1 = "M20 40 A1 1 0 1 1 80 40 Q80 60 50 95 Q20 60 20 40 L30 40 Q30 55 50 80 Q70 55 70 40 A1 1 0 1 0 30 40";
+                p2 = "M50 30 A1 1 0 1 1 50 50 A1 1 0 1 1 50 30";
                 p3 = "";
             }else if (type.includes("book")){
                 p1 = "";

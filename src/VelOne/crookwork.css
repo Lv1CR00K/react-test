@@ -309,6 +309,75 @@ header{
 }
 /* FOR TOGGLE ARROWS */
 
+/* FOR TOGGLE BOOKMARK */
+.icn_bookmark path{
+    transform-origin: center;
+}
+[id*="icon_check_"]:not(:checked) + .icn_bookmark path:nth-child(2){
+    fill: var(--BGP) !important;
+}[id*="icon_check_"]:checked + .icn_bookmark path:nth-child(2){
+    fill: var(--BGCA) !important;
+}[id*="icon_check_"]:checked + .icn_bookmark path{
+    animation: popIcon 150ms ease-in-out backwards;
+}
+/* FOR TOGGLE BOOKMARK */
+
+/* FOR TOGGLE HEART */
+.icn_heart path{
+    transform-origin: center;
+}
+[id*="icon_check_"]:not(:checked) + .icn_heart path:nth-child(2){
+    fill: var(--BGP) !important;
+}[id*="icon_check_"]:checked + .icn_heart path:nth-child(2){
+    fill: var(--BGCA) !important;
+}[id*="icon_check_"]:checked + .icn_heart path{
+    animation: popIcon 150ms ease-in-out backwards;
+}
+/* FOR TOGGLE HEART */
+
+/* FOR TOGGLE/NON-TOGGLE MATH SIGN */
+[class*="icn_add"] path,
+[class*="icn_minus"] path,
+[class*="icn_smallAdd"] path,
+[class*="icn_smallMinus"] path,
+[class*="icn_times"] path,
+[class*="icn_roundAdd"] path,
+[class*="icn_roundMinus"] path,
+[class*="icn_roundTimes"] path{
+    transform-origin: 50% 50%;
+}
+
+[class*="icn_minus"] path:nth-child(2),
+[class*="icn_roundMinus"] path:nth-child(2),
+[class*="icn_smallMinus"] path:nth-child(2){
+    opacity: 0;
+}
+
+.icn_times path{
+    transform: rotateZ(45deg) scale(120%, 120%);
+}.icn_roundTimes path{
+    transform: rotateZ(45deg);
+}
+
+[id*="icon_check_"]:checked + .icn_add path,
+[id*="icon_check_"]:checked + .icn_smallAdd path,
+[id*="icon_check_"]:checked + .icn_roundAdd path{
+    transform: rotateZ(360deg);
+}[id*="icon_check_"]:checked + .icn_add path:nth-child(2),
+[id*="icon_check_"]:checked + .icn_smallAdd path:nth-child(2),
+[id*="icon_check_"]:checked + .icn_roundAdd path:nth-child(2){
+    opacity: 0;
+}
+[id*="icon_check_"]:checked + .icn_minus path,
+[id*="icon_check_"]:checked + .icn_roundMinus path,
+[id*="icon_check_"]:checked + .icn_smallMinus path{
+    transform: rotateZ(360deg);
+}[id*="icon_check_"]:checked + .icn_minus path:nth-child(2),
+[id*="icon_check_"]:checked + .icn_roundMinus path:nth-child(2),
+[id*="icon_check_"]:checked + .icn_smallMinus path:nth-child(2){
+    opacity: 1;
+}
+/* FOR TOGGLE/NON-TOGGLE MATH SIGN */
 
 /* FOR NON-TOGGLE PROFILE */
 [class*="icn_prof"] div{
@@ -325,25 +394,20 @@ header{
     border-radius: 100000px 100000px 0px 0px;
 }
 /* FOR NON-TOGGLE PROFILE */
-
-/* FOR NON-TOGGLE BOOKMARK */
-[id*="icon_check_"]:not(:checked) + .icn_bookmark path:nth-child(2){
-    fill: var(--BGP) !important;
-}[id*="icon_check_"]:checked + .icn_bookmark path:nth-child(2){
-    fill: var(--BGCA) !important;
-}
-/* FOR NON-TOGGLE BOOKMARK */
-
-/* FOR NON-TOGGLE HEART */
-[id*="icon_check_"]:not(:checked) + .icn_heart path:nth-child(2){
-    fill: var(--BGP) !important;
-}[id*="icon_check_"]:checked + .icn_heart path:nth-child(2){
-    fill: var(--BGCA) !important;
-}
-/* FOR NON-TOGGLE HEART */
-
 /* ~~~~~~~~~~~ FOR ICONS ~~~~~~~~~~~ */
 /* --------------BUTTON STYLE-------------- */
+
+@keyframes popIcon {
+    1%{
+        transform: scale(100%);
+    }
+    50%{
+        transform: scale(50%);
+    }
+    100%{
+        transform: scale(100%);
+    }
+}
 
 @media (max-width: 1100px){
     .grid_adjust{
