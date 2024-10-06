@@ -11,14 +11,14 @@ import React, { useState, useEffect} from 'react'
 
 export default function App(){
     const arrayOfIcons = () => {
-        const typesOfIcons = ["menu", "mess", "bell", "pass", "left", "top", "right", "bottom", "bookmark", "heart", "add", "minus", "smallAdd", "smallMinus", "roundAdd", "roundMinus",
-            "times", "roundTimes", "search", "prof", "home", "cale", "dashboard", "send", "trash", "edit", "atEmail", "info", "location", "logout", "download"];
+        const typesOfIcons = ["menu", "mess", "bell", "pass", "left", "top", "right", "bottom", "bookmark", "heart", "setting", "add", "minus", "smallAdd", "smallMinus", "roundAdd", "roundMinus",
+            "times", "roundTimes", "search", "blackUser", "user", "twoUsers", "threeUsers", "home", "cale", "dashboard", "send", "trash", "edit", "atEmail", "info", "stats", "chart", "location", "logout", "download"];
 
         return(
             <>
                 {typesOfIcons.map((iconName, iconIndex) => (
                     <TypeBody type="fcol" key={iconIndex}>
-                        <BtnIcons type={iconName} Mar={10}/>
+                        <BtnIcons type={iconName} Mar={10} HW={40}/>
                     </TypeBody>
                 ))}
             </>
@@ -92,7 +92,7 @@ export default function App(){
                 <>
                     <HeadsOne text="VelOne Icons" type="h3" objectStyle={{textAlign: "center"}}/>
                     <BoxBody type="BG">
-                        <TypeBody type={"grid"} objectStyle={{"--gMin": "65px"}}>
+                        <TypeBody type={"grid"} objectStyle={{"--gMin": "75px"}}>
                             {arrayOfIcons()}
                         </TypeBody>
                     </BoxBody>

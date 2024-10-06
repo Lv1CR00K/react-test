@@ -230,6 +230,9 @@ header{
     transition: 200ms all ease-in-out;
     stroke: black;
     stroke-width: 0;
+    stroke-linecap: round;
+    stroke-dasharray: 1%;
+    stroke-linejoin: round;
 }[class*="icn_"] svg{
     transition: 200ms all ease-in-out;
     width: var(--HW) !important;
@@ -241,9 +244,11 @@ header{
 }[id*="icon_check_"]:not(:checked) + [class*="icn_"]{
     background-color: var(--BGP);
 }[id*="icon_check_"]:checked + [class*="icn_"] svg path{
+    stroke: var(--BGCA);
     fill: var(--BGCA);
 }[id*="icon_check_"]:not(:checked) + [class*="icn_"] svg path{
     fill: var(--BGC);
+    stroke: var(--BGC);
 }
 
 /* FOR TOGGLE MENU */
@@ -336,6 +341,20 @@ header{
 }
 /* FOR TOGGLE HEART */
 
+/* FOR TOGGLE SETTINGS */
+[class*="icn_setting"] path{
+    transform-origin: 50% 50%;
+}[class*="icn_setting"] path:nth-child(3){
+    transform: rotateZ(45deg);
+}
+[id*="icon_check_"]:checked + .icn_setting path:nth-child(2){
+    transform: rotateZ(360deg);
+}[id*="icon_check_"]:checked + .icn_setting path:nth-child(3){
+    transform: rotateZ(405deg);
+}
+/* FOR TOGGLE SETTINGS */
+
+
 /* FOR TOGGLE/NON-TOGGLE MATH SIGN */
 [class*="icn_add"] path,
 [class*="icn_minus"] path,
@@ -380,21 +399,21 @@ header{
 }
 /* FOR TOGGLE/NON-TOGGLE MATH SIGN */
 
-/* FOR NON-TOGGLE PROFILE */
-[class*="icn_prof"] div{
-    --bRadorss: 7px 5px;
-    flex: 1;
-    margin: 0;
-}[class*="icn_prof"] div:nth-of-type(1){
-    border-radius: 50px;
-    margin-bottom: 7%;
-    width: 45%;
-}[class*="icn_prof"] div:nth-of-type(2){
-    flex: 1.2;
-    width: 100%;
-    border-radius: 100000px 100000px 0px 0px;
+/* FOR NON-TOGGLE CHART */
+.icn_chart path:nth-child(2){
+    stroke-width: 10px;
+    fill: none !important;
 }
-/* FOR NON-TOGGLE PROFILE */
+/* FOR NON-TOGGLE CHART */
+
+/* FOR NON-TOGGLE USER/S */
+.icn_user path,
+.icn_twoUsers path,
+.icn_threeUsers path{
+    stroke-width: 10px !important;
+    fill: none !important;
+}
+/* FOR NON-TOGGLE USER/S */
 /* ~~~~~~~~~~~ FOR ICONS ~~~~~~~~~~~ */
 /* --------------BUTTON STYLE-------------- */
 
