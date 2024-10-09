@@ -152,19 +152,19 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName
                 p2 = "M70 50A1 1 0 1 0 85 50 A35 35 0 1 0 75 75 A1 1 0 1 1 80 85 Q65 95 50 95 Q8 92 5 50 A1 1 0 1 1 95 50 A1 1 0 1 1 60 50";
                 p3 = "";
             }else if (type.includes("left")){
-                p1 = "M25 45 L65 5 L75 15 L42 45 Q35 50 42 55 L75 85 L65 95 L25 55 Q15 50 25 45";
+                p1 = "M65 10 L25 50 L65 90";
                 p2 = "";
                 p3 = "";
             }else if (type.includes("top")){
-                p1 = "M25 45 L65 5 L75 15 L42 45 Q35 50 42 55 L75 85 L65 95 L25 55 Q15 50 25 45";
+                p1 = "M65 10 L25 50 L65 90";
                 p2 = "";
                 p3 = "";
             }else if (type.includes("right")){
-                p1 = "M25 45 L65 5 L75 15 L42 45 Q35 50 42 55 L75 85 L65 95 L25 55 Q15 50 25 45";
+                p1 = "M65 10 L25 50 L65 90";
                 p2 = "";
                 p3 = "";
             }else if (type.includes("bottom")){
-                p1 = "M25 45 L65 5 L75 15 L42 45 Q35 50 42 55 L75 85 L65 95 L25 55 Q15 50 25 45";
+                p1 = "M65 10 L25 50 L65 90";
                 p2 = "";
                 p3 = "";
             }else if (type.includes("info")){
@@ -173,50 +173,54 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName
                 p3 = "M45 45 A1 1 0 1 1 55 45 L55 70 A1 1 0 1 1 45 70";
             }else if (type.includes("logout")){
                 p1 = "M10 5 L45 5 Q50 5 50 10 L50 30 A1 1 0 1 1 40 30 L40 20 Q40 15 35 15 L20 15 Q15 15 15 20 L15 80 Q15 85 20 85 L35 85 Q40 85 40 80 L40 70 A1 1 0 1 1 50 70 L50 90 Q50 95 45 95 L10 95 Q5 95 5 90 L5 10 Q5 5 10 5";
-                p2 = "M30 45 A1 1 0 1 0 30 55 L75 55 A1 1 0 1 0 75 45";
-                p3 = "M75 35 A1 1 0 1 1 75 65 A1 1 0 1 0 75 75 A1 1 0 1 0 75 25 A1 1 0 1 0 75 35";
+                p2 = "M30 50 L70 50";
+                p3 = "M80 70 L90 50 L80 30";
             }else if (type.includes("download")){
                 p1 = "M5 65 A1 1 0 1 1 15 65 L15 80 Q15 85 20 85 L80 85 Q85 85 85 80 L85 65 A1 1 0 1 1 95 65 L95 90 Q95 95 90 95 L10 95 Q5 95 5 90";
                 p2 = "M50 75 L75 65 L75 55 L55 62 L55 10 A1 1 0 1 0 45 10 L45 62 L25 55 L25 65";
                 p3 = "";
             }else if (type.includes("add")){
-                p1 = "M15 45 L85 45 A1 1 0 1 1 85 55 L15 55 A1 1 0 1 1 15 45";
-                p2 = "M45 15 L45 85 A1 1 0 1 0 55 85 L55 15 A1 1 0 1 0 45 15";
+                p1 = "M10 50 L90 50";
+                p2 = "M50 10 L50 90";
                 p3 = "";
             }else if (type.includes("minus")){
-                p1 = "M15 45 L85 45 A1 1 0 1 1 85 55 L15 55 A1 1 0 1 1 15 45";
-                p2 = "M45 15 L45 85 A1 1 0 1 0 55 85 L55 15 A1 1 0 1 0 45 15";
+                p1 = "M10 50 L90 50";
+                p2 = "M50 10 L50 90";
                 p3 = "";
             }else if (type.includes("times")){
-                p1 = "M15 45 L85 45 A1 1 0 1 1 85 55 L15 55 A1 1 0 1 1 15 45";
-                p2 = "M45 15 L45 85 A1 1 0 1 0 55 85 L55 15 A1 1 0 1 0 45 15";
+                p1 = "M10 50 L90 50";
+                p2 = "M50 10 L50 90";
                 p3 = "";
             }else if (type.includes("smallAdd")){
-                p1 = "M30 45 L70 45 A1 1 0 1 1 70 55 L30 55 A1 1 0 1 1 30 45";
-                p2 = "M45 30 L45 70 A1 1 0 1 0 55 70 L55 30 A1 1 0 1 0 45 30";
+                p1 = "M25 50 L75 50";
+                p2 = "M50 25 L50 75 ";
                 p3 = "";
             }else if (type.includes("smallMinus")){
-                p1 = "M30 45 L70 45 A1 1 0 1 1 70 55 L30 55 A1 1 0 1 1 30 45";
-                p2 = "M45 30 L45 70 A1 1 0 1 0 55 70 L55 30 A1 1 0 1 0 45 30";
+                p1 = "M25 50 L75 50";
+                p2 = "M50 25 L50 75 ";
+                p3 = "";
+            }else if (type.includes("smallTimes")){
+                p1 = "M25 50 L75 50";
+                p2 = "M50 25 L50 75 ";
                 p3 = "";
             }else if (type.includes("roundAdd")){
-                p1 = "M30 45 L70 45 A1 1 0 1 1 70 55 L30 55 A1 1 0 1 1 30 45";
-                p2 = "M45 30 L45 70 A1 1 0 1 0 55 70 L55 30 A1 1 0 1 0 45 30";
-                p3 = "M5 50 A1 1 0 1 1 95 50 A1 1 0 1 1 5 50 L15 50 A1 1 0 1 0 85 50 A1 1 0 1 0 15 50";
+                p1 = "M25 50 L75 50";
+                p2 = "M50 25 L50 75 ";
+                p3 = "M5 50 A1 1 0 1 1 95 50 A1 1 0 1 1 5 50";
             }else if (type.includes("roundMinus")){
-                p1 = "M30 45 L70 45 A1 1 0 1 1 70 55 L30 55 A1 1 0 1 1 30 45";
-                p2 = "M45 30 L45 70 A1 1 0 1 0 55 70 L55 30 A1 1 0 1 0 45 30";
-                p3 = "M5 50 A1 1 0 1 1 95 50 A1 1 0 1 1 5 50 L15 50 A1 1 0 1 0 85 50 A1 1 0 1 0 15 50";
+                p1 = "M25 50 L75 50";
+                p2 = "M50 25 L50 75 ";
+                p3 = "M5 50 A1 1 0 1 1 95 50 A1 1 0 1 1 5 50";
             }else if (type.includes("roundTimes")){
-                p1 = "M30 45 L70 45 A1 1 0 1 1 70 55 L30 55 A1 1 0 1 1 30 45";
-                p2 = "M45 30 L45 70 A1 1 0 1 0 55 70 L55 30 A1 1 0 1 0 45 30";
-                p3 = "M5 50 A1 1 0 1 1 95 50 A1 1 0 1 1 5 50 L15 50 A1 1 0 1 0 85 50 A1 1 0 1 0 15 50";
+                p1 = "M25 50 L75 50";
+                p2 = "M50 25 L50 75 ";
+                p3 = "M5 50 A1 1 0 1 1 95 50 A1 1 0 1 1 5 50";
             }else if (type.includes("search")){
-                p1 = "M5 45 A1 1 0 1 1 80 45 A1 1 0 1 1 5 45 L15 45 A1 1 0 1 0 70 45 A1 1 0 1 0 15 45";
-                p2 = "M85 95 L62 72 L72 62 L95 85 A1 1 0 1  1 85 95";
+                p1 = "M10 45 A1 1 0 1 1 80 50 A1 1 0 1 1 10 45";
+                p2 = "M90 90 L75 75";
                 p3 = "";
             }else if (type.includes("location")){
-                p1 = "M13 46 A1 1 0 1 1 87 46 Q80 80 50 95 Q20 80 13 46 L23 46 Q29 75 50 85 Q71 75 77 46 A1 1 0 1 0 23 46";
+                p1 = "M13 46 A1 1 0 1 1 87 46 Q80 80 50 95 Q20 80 13 46 L23 46 Q29 75 50 83 Q71 75 77 46 A1 1 0 1 0 23 46";
                 p2 = "M50 30 A1 1 0 1 1 50 60 A1 1 0 1 1 50 30";
                 p3 = "";
             }else if (type.includes("setting")){
@@ -243,6 +247,42 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName
                 p1 = "M50 40 A1 1 0 1 1 50 50 A1 1 0 1 1 50 40 Z M32 83 A1 1 0 1 1 68 83";
                 p2 = "M25 20 A1 1 0 1 1 25 30 A1 1 0 1 1 25 20 Z M10 60 Q15 45 30 45";
                 p3 = "M75 20 A1 1 0 1 1 75 30 A1 1 0 1 1 75 20 Z M90 60 Q85 45 70 45";
+            }else if (type.includes("exclamation")){
+                p1 = "M10 50 A1 1 0 1 1 90 50 A1 1 0 1 1 10 50";
+                p2 = "M50 30 L50 60";
+                p3 = "M50 72 L50 72";
+            }else if (type.includes("question")){
+                p1 = "M10 50 A1 1 0 1 1 90 50 A1 1 0 1 1 10 50";
+                p2 = "M30 50 Q30 30 50 30 Q70 30 70 45 Q50 49 50 59";
+                p3 = "M50 72 L50 72";
+            }else if (type.includes("globe")){
+                p1 = "M10 50 A1 1 0 1 1 90 50 A1 1 0 1 1 10 50";
+                p2 = "M50 10 Q20 50 50 90 Q80 50 50 10";
+                p3 = "M10 50 L90 50";
+            }else if (type.includes("eye")){
+                p1 = "M10 50 Q50 0 90 50 Q50 100 10 50";
+                p2 = "M35 50 A1 1 0 1 1 65 50 A1 1 0 1 1 35 50";
+                p3 = "";
+            }else if (type.includes("comment")){
+                p1 = "M10 50 Q10 10 50 10 Q90 10 90 50 L90 90 L50 90 Q10 90 10 50";
+                p2 = "M30 40 L50 40";
+                p3 = "M30 60 L70 60";
+            }else if (type.includes("altComment")){
+                p1 = "M10 60 L10 25 Q10 10 25 10 L75 10 Q90 10 90 25 L90 60 Q90 75 70 75 L50 90 L30 75 Q10 75 10 60";
+                p2 = "M30 33 L50 33";
+                p3 = "M30 55 L70 55";
+            }else if (type.includes("play")){
+                p1 = "M20 80 L20 20 L85 50 L20 80";
+                p2 = "M35 20 L35 80";
+                p3 = "M65 20 L65 80";
+            }else if (type.includes("pause")){
+                p1 = "M20 80 L20 20 L85 50 L20 80";
+                p2 = "M35 20 L35 80";
+                p3 = "M65 20 L65 80";
+            }else if (type.includes("retry")){
+                p1 = "M80 50 A1 1 0 1 1 20 50 Q21 21 50 20 Q55 20 60 22";
+                p2 = "M60 20 L45 35 L70 30 L67 5";
+                p3 = "";
             }else if (type.includes("book")){
                 p1 = "";
                 p2 = "";

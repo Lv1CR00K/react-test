@@ -294,6 +294,8 @@ header{
 [class*="icn_right"] path:nth-child(1),
 [class*="icn_top"] path:nth-child(1),
 [class*="icn_bottom"] path:nth-child(1){
+    stroke-width: 15px !important;
+    fill: none !important;
     transform-origin: 50% 50%;
 }
 [class*="icn_right"] path:nth-child(1){
@@ -354,6 +356,36 @@ header{
 }
 /* FOR TOGGLE SETTINGS */
 
+/* FOR TOGGLE MEDIA ICON */
+[class*="icn_play"] path,
+[class*="icn_pause"] path,
+[class*="icn_retry"] path{
+    transform-origin: 50% 50%;
+}[id*="icon_check_"]:checked + .icn_retry path{
+    animation: spinIcon 300ms infinite forwards;
+}[id*="icon_check_"]:checked + .icn_play path,
+[id*="icon_check_"]:checked + .icn_pause path{
+    animation: popIcon 150ms ease-in-out backwards;
+}
+
+[class*="icn_play"] path:not(:nth-child(1)){
+    opacity: 0;
+}[id*="icon_check_"]:checked + .icn_play path:nth-child(1){
+    opacity: 0;
+}[id*="icon_check_"]:checked + .icn_play path:not(:nth-child(1)){
+    opacity: 1;
+}
+
+
+[class*="icn_pause"] path:nth-child(1){
+    opacity: 0;
+}[id*="icon_check_"]:checked + .icn_pause path:nth-child(1){
+    opacity: 1;
+}[id*="icon_check_"]:checked + .icn_pause path:not(:nth-child(1)){
+    opacity: 0;
+}
+
+/* FOR TOGGLE MEDIA ICON */
 
 /* FOR TOGGLE/NON-TOGGLE MATH SIGN */
 [class*="icn_add"] path,
@@ -364,6 +396,8 @@ header{
 [class*="icn_roundAdd"] path,
 [class*="icn_roundMinus"] path,
 [class*="icn_roundTimes"] path{
+    stroke-width: 10px !important;
+    fill: none !important;
     transform-origin: 50% 50%;
 }
 
@@ -414,6 +448,29 @@ header{
     fill: none !important;
 }
 /* FOR NON-TOGGLE USER/S */
+
+/* FOR NON-TOGGLE OTHERS STROKE 10px*/
+.icn_exclamation path,
+.icn_question path,
+.icn_globe path,
+.icn_altComment path,
+.icn_comment path,
+.icn_eye path:nth-child(1){
+    stroke-width: 10px !important;
+    fill: none !important;
+}
+/* FOR NON-TOGGLE OTHERS STROKE 10px*/
+
+/* FOR OTHERS STROKE 12px*/
+.icn_search path,
+.icn_play path,
+.icn_pause path,
+.icn_retry path:nth-child(1),
+.icn_logout path:not(:nth-child(1)){
+    stroke-width: 12px !important;
+    fill: none !important;
+}
+/* FOR OTHERS STROKE 15px*/
 /* ~~~~~~~~~~~ FOR ICONS ~~~~~~~~~~~ */
 /* --------------BUTTON STYLE-------------- */
 
@@ -426,6 +483,14 @@ header{
     }
     100%{
         transform: scale(100%);
+    }
+}
+@keyframes spinIcon {
+    1%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotatez(360deg);
     }
 }
 
