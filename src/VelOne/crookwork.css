@@ -222,6 +222,17 @@ header{
     padding: calc(var(--HW) * 0.33) !important;
     flex-direction: column;
     transition: 200ms all ease-in-out;
+}[class*="icnOnly_"]{
+    display: flex !important;
+    align-items: center !important;
+    text-align: center;
+    justify-content: center !important;
+    position: var(--pos);
+    border-radius: var(--bRad);
+    background-color: var(--BGP);
+    width: var(--HW) !important;
+    height: var(--HW) !important;
+    flex-direction: column;
 }[class*="icn_"] div{
     transition: 200ms all ease-in-out;
     margin: 2.5px;
@@ -247,6 +258,9 @@ header{
     stroke: var(--BGCA);
     fill: var(--BGCA);
 }[id*="icon_check_"]:not(:checked) + [class*="icn_"] svg path{
+    fill: var(--BGC);
+    stroke: var(--BGC);
+}[class*="icnOnly_"] svg path{
     fill: var(--BGC);
     stroke: var(--BGC);
 }
@@ -450,23 +464,25 @@ header{
 /* FOR NON-TOGGLE USER/S */
 
 /* FOR NON-TOGGLE OTHERS STROKE 10px*/
-.icn_exclamation path,
-.icn_question path,
-.icn_globe path,
-.icn_altComment path,
-.icn_comment path,
-.icn_eye path:nth-child(1){
+[class*="_exclamation"] path,
+[class*="_question"] path,
+[class*="_globe"] path,
+[class*="_altComment"] path,
+[class*="_comment"] path,
+[class*="_atEmail"] path,
+[class*="_roundCellNumber"] path,
+[class*="_eye"] path:nth-child(1){
     stroke-width: 10px !important;
     fill: none !important;
 }
 /* FOR NON-TOGGLE OTHERS STROKE 10px*/
 
 /* FOR OTHERS STROKE 12px*/
-.icn_search path,
-.icn_play path,
-.icn_pause path,
-.icn_retry path:nth-child(1),
-.icn_logout path:not(:nth-child(1)){
+[class*="_search"] path,
+[class*="_play"] path,
+[class*="_pause"] path,
+[class*="_retry"] path:nth-child(1),
+[class*="_logout"] path:not(:nth-child(1)){
     stroke-width: 12px !important;
     fill: none !important;
 }

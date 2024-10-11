@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Validator from './validator.jsx'
 
 let glIconCount = 0;
-export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName, objectStyle}){
+export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName, objectStyle, iconOnly}){
     // ONLY ACCEPTS HEX COLORS!!!!
     // const handleIconClick = () => icon_click("crook", "main");
     /*title="_nope" for no animation
@@ -51,6 +51,7 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName
                 return "";
         }
     }
+    iconOnly = iconOnly || false;
     addClassName = addClassName || "";
     objectStyle = objectStyle || {};
     HW = {'--HW': styler('hw')};
@@ -148,8 +149,8 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName
                 p2 = "M65 15 A1 1 0 1 1 85 35 L45 75 L25 75 25 55";
                 p3 = "";
             }else if (type.includes("atEmail")){
-                p1 = "M30 50 A1 1 0 1 1 70 50 A1 1 0 1 1 30 50 L40 50 A1 1 0 1 0 60 50 A1 1 0 1 0 40 50";
-                p2 = "M70 50A1 1 0 1 0 85 50 A35 35 0 1 0 75 75 A1 1 0 1 1 80 85 Q65 95 50 95 Q8 92 5 50 A1 1 0 1 1 95 50 A1 1 0 1 1 60 50";
+                p1 = "M30 50 A1 1 0 1 1 70 50 A1 1 0 1 1 30 50";
+                p2 = "M70 50 L70 65 A1 1 0 1 0 90 65 L90 50 A1 1 0 1 0 10 50 Q12 88 50 90 Q55 90 65 88";
                 p3 = "";
             }else if (type.includes("left")){
                 p1 = "M65 10 L25 50 L65 90";
@@ -283,6 +284,10 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName
                 p1 = "M80 50 A1 1 0 1 1 20 50 Q21 21 50 20 Q55 20 60 22";
                 p2 = "M60 20 L45 35 L70 30 L67 5";
                 p3 = "";
+            }else if (type.includes("roundCellNumber")){
+                p1 = "";
+                p2 = "";
+                p3 = "";
             }else if (type.includes("book")){
                 p1 = "";
                 p2 = "";
@@ -304,13 +309,20 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName
         }
 
         return(
-            <label className={`label_icon_${type}${addClassName}`} htmlFor={`icon_check_${count}`} onClick={handleClick} style={Mar}>
-                <input type="checkbox" id={`icon_check_${count}`} className={`chk_${type}`} data-value="someValue" />
-                <div className={`icn_${type}`} style={objectStyle}>
-                    {/* insert the innerDiv() */}
+            <>
+            {iconOnly == false ? (
+                <label className={`label_icon_${type}${addClassName}`} htmlFor={`icon_check_${count}`} onClick={handleClick} style={Mar}>
+                    <input type="checkbox" id={`icon_check_${count}`} className={`chk_${type}`} data-value="someValue" />
+                    <div className={`icn_${type}`} style={objectStyle}>
+                        {innerDiv()}
+                    </div>
+                </label>
+            ) : (
+                <div className={`icnOnly_${type}`} style={objectStyle}>
                     {innerDiv()}
                 </div>
-            </label>
+            )}
+            </>
         );
     }
     // CHECKING IF TYPE IS EMPTY
