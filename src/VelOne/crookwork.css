@@ -109,6 +109,10 @@ h1,h2,h3,h4,p{
     text-align: var(--tAl);
     color: var(--txtColD);
     text-decoration: none;
+}ul, li{
+    text-align: var(--tAl);
+    color: var(--txtColD);
+    font-weight: bold;
 }
 /*------------------ TEXT ------------------*/
 
@@ -454,6 +458,13 @@ header{
 }
 /* FOR NON-TOGGLE CHART */
 
+/* FOR NON-TOGGLE TELEPHONE */
+[class*="_telephone"] path{
+    transform-origin: center;
+    transform: rotateZ(-45deg);
+}
+/* FOR NON-TOGGLE TELEPHONE */
+
 /* FOR NON-TOGGLE USER/S */
 .icn_user path,
 .icn_twoUsers path,
@@ -470,7 +481,6 @@ header{
 [class*="_altComment"] path,
 [class*="_comment"] path,
 [class*="_atEmail"] path,
-[class*="_roundCellNumber"] path,
 [class*="_eye"] path:nth-child(1){
     stroke-width: 10px !important;
     fill: none !important;
@@ -482,6 +492,7 @@ header{
 [class*="_play"] path,
 [class*="_pause"] path,
 [class*="_retry"] path:nth-child(1),
+[class*="_telephone"] path:not(:nth-child(1)),
 [class*="_logout"] path:not(:nth-child(1)){
     stroke-width: 12px !important;
     fill: none !important;

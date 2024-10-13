@@ -284,10 +284,10 @@ export default function BtnIcons({ type, ocjs, Mar, HW, bRad, bgpa, addClassName
                 p1 = "M80 50 A1 1 0 1 1 20 50 Q21 21 50 20 Q55 20 60 22";
                 p2 = "M60 20 L45 35 L70 30 L67 5";
                 p3 = "";
-            }else if (type.includes("roundCellNumber")){
-                p1 = "";
-                p2 = "";
-                p3 = "";
+            }else if (type.includes("telephone")){
+                p1 = "M10 50 Q10 10 40 10 Q50 25 40 40 Q30 35 30 50 Q30 65 40 60 Q50 75 40 90 Q10 90 10 50";
+                p2 = "M60 40 Q75 50 60 60";
+                p3 = "M75 25 Q100 50 75 75";
             }else if (type.includes("book")){
                 p1 = "";
                 p2 = "";

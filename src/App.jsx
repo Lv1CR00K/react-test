@@ -13,23 +13,30 @@ export default function App(){
     const arrayOfIcons = () => {
         const typesOfIcons = ["menu", "mess", "bell", "pass", "left", "top", "right", "bottom", "bookmark", "heart", "setting", "add", "minus", "smallAdd", "smallMinus", "roundAdd", "roundMinus", "play", "pause", "retry", 
             "times", "roundTimes", "search", "blackUser", "user", "twoUsers", "threeUsers", "home", "cale", "dashboard", "send", "trash", "edit", "atEmail", "info", "stats", "chart", "location", "logout", "download",
-            "exclamation", "question", "globe", "eye", "comment", "altComment", "roundCellNumber"];
+            "exclamation", "question", "globe", "eye", "comment", "altComment", "telephone"];
 
         return(
             <>
                 {typesOfIcons.map((iconName, iconIndex) => (
                     <TypeBody type="fcol" key={iconIndex}>
-                        <BtnIcons type={iconName} Mar={10} HW={40}/>
+                        <BtnIcons type={iconName} Mar={10} HW={35}/>
                     </TypeBody>
                 ))}
             </>
         );
     }
+
+    //FOR THE INFORMATIONS!
     const defText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, maxime, a quae, ad assumenda quidem nulla repellendus sequi consequuntur dolorum iste unde dolores distinctio similique deleniti officia dicta asperiores reiciendis?";
-    const myProfile = "Recent graduate with a Bachelor's of Science in Information Technology with extensive knowledge in web development. Skilled in using vanilla CSS, HTML, JS, and PHP with the help of XAMPP. Currently studying React JS and trying to create my own styles, starting with icons using SVG paths.";
-    const myContacts = ["roundCellNumber/~/09266153663", "roundCellNumber/~/0993591749", "atEmail/~/jeanpakingan990@gmail.com",
-                        "globe/~/FaceBook/~/https://www.facebook.com/Lvl1Crook/", "globe/~/Linked In/~/https://www.linkedin.com/in/jean-cyrus-pakingan-a05264323/"];
-    
+    const myProfile = "Recent graduate of Bachelor's of Science in Information Technology. Skilled in using vanilla CSS, HTML, JS, and PHP with the help of XAMPP. Currently studying React JS and trying to create my own styles, starting with icons using SVG paths.";
+    const myContacts = ["telephone/~/09266153663", "telephone/~/0993591749", "atEmail/~/jeanpakingan990@gmail.com",
+                        "globe/~/My Facebook/~/https://www.facebook.com/Lvl1Crook/", "globe/~/My Linked In/~/https://www.linkedin.com/in/jean-cyrus-pakingan-a05264323/"];
+    const myEducation = ["Senior High School - PMMS Las Piñas/~/Science, Technology, Engineering, and Mathematics (STEM)/~/2018-2020", "College - STI College Bacoor/~/Bachelor of Science in Information Technology (BSIT)/~/2020-2024"];
+    const myWorkExperience = ["Full-Stack Developer - Land Transportation Office (LTO) Bacoor District Office/~/Created a file management system in order for a faster file locating within file shelfs, booking system for files, archiving, and more./~/Feb 2024 - May 2024"];
+    const mySoftSkills = "Hello World! ❤️❤️❤️";
+
+    //FOR THE INFORMATIONS!
+
     const aboutMe = () => {
         return(
             <>
@@ -43,7 +50,7 @@ export default function App(){
                                     (() => {
                                         const linkName = iconValAry[0].replace("_", " ");
                                         return (
-                                            <a href={iconValAry[2]} style={{color: "lightblue", padding: "10px"}}>
+                                            <a target='_blank' href={iconValAry[2]} style={{color: "lightblue", padding: "10px", textDecoration: "underline"}}>
                                                 {iconValAry[1]}
                                             </a>
                                         );
@@ -59,8 +66,38 @@ export default function App(){
             </>
         );
     }
+
+    const showList = (listArray) => {
+        const dividerLi = (key) => {
+            if(key !== 0){
+                return(
+                    <BoxBody type="BG" objectStyle={{padding: "1px", "--whiteBg" : "var(--grayBg)", margin : "5px"}}></BoxBody>
+                );
+            }
+        }
+        return(
+            <>
+                {listArray.map((list, key) => {
+                    const listSlice = list.split("/~/");
+                    return(
+                        <>
+                            {dividerLi(key)}
+                            <li style={{margin: "5px 10px", textDecoration: "underline", fontSize: "20px"}}>
+                                {listSlice[0]}
+                            </li>
+                            <HeadsOne text={listSlice[1]} type="h4" objectStyle={{color: "white", fontSize: "14px", flex: "1", padding: "2px 37px 2px 37px"}}/>
+                            <HeadsOne text={listSlice[2]} type="p" objectStyle={{color:  "#c7c7c7", fontSize: "12px", flex: "1", padding: "2px 37px 5px 37px", fontWeight: "none"}}/>
+                        </>
+                    );
+                })}
+            </>
+        );
+    }
     let [getHash, setHash] = useState("");
     useEffect(() => {
+        if (!window.location.hash) {
+            window.location.hash = '#Home';
+        }
         setHash(window.location.hash.slice(1).replace(/%20/g, " "));
         const handleHashChange = () => {
             setHash(window.location.hash.slice(1).replace(/%20/g, " "));
@@ -72,38 +109,38 @@ export default function App(){
         <Header logo="./crookwork.png" itemsAry={["Home", "My Styles"]}/>
         <div className='middle_body'>
             <TypeBody addId="Home" type="fcol" bWidth={"900px"} objectStyle={{padding: "10px 0px 0px 0px", margin: "0px 10px"}}>
-            {getHash !== "My Styles" ? (
+            {getHash == "Home" ? (
                 <>
                     {/* PROFILE INTRODUCE */}
+                    <HeadsOne text="I introduce to you..." type="h3" objectStyle={{textAlign: "center", marginTop: "10px"}}/>
                     <BoxBody type="BGSha">
                         <TypeBody type="frow" addClassName=" profileMedia">
                             <TypeBody type="fcol" objectStyle={{flex: "1", padding: "0px 10px 10px 10px"}}>
                                 <HeadsOne text="Jean Cyrus L. Pakingan" type="h1" objectStyle={{textAlign: "center"}}/>
-                                <HeadsOne text={myProfile} type="p" objectStyle={{color: "#c7c7c7", fontSize: "18px"}}/>
+                                <HeadsOne text={myProfile} type="p" objectStyle={{color: "#c7c7c7", fontSize: "18px", padding: "10px 0px"}}/>
                             </TypeBody>
                             <img className='img_pfp' src="pfp.JPG"/>
                         </TypeBody>
                     </BoxBody>
 
-                    <HeadsOne text="My Contact and Place?" type="h3" objectStyle={{textAlign: "center", marginTop: "20px", scrollMarginTop: "60px"}}/>
+                    <HeadsOne text="You can contact me through..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px", scrollMarginTop: "60px"}}/>
                     <BoxBody type="BG">
                         <TypeBody type={"grid"} objectStyle={{"--gMin": "300px"}}>
                             {aboutMe()}
                         </TypeBody>
                     </BoxBody>
 
-                    <HeadsOne text="Education" type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
+                    <HeadsOne text="This is my educational background..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
                     <BoxBody type="BGSha">
-                        <HeadsOne text={defText} type="h3" objectStyle={{color: "#c7c7c7"}}/>
+                        {showList(myEducation)}
                     </BoxBody>
 
-                    <HeadsOne text="Work Experience" type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
+                    <HeadsOne text="Here are my work experience/s..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
                     <BoxBody type="BGSha">
-                        <HeadsOne text="LTO Bacoor District Office - (Jan - May 2024)" type="h2" objectStyle={{textAlign: "left"}}/>
-                        <HeadsOne text={defText} type="h3" objectStyle={{color: "#c7c7c7", padding: "5px 5px 5px 40px"}}/>
+                        {showList(myWorkExperience)}
                     </BoxBody>
 
-                    <HeadsOne text="Hard Skills" type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
+                    <HeadsOne text="These are my Hard Skills..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
                     <TypeBody type="grid" objectStyle={{padding: "0px"}}>
                         <BBPicHolder title="PHP" src="php.png"/>
                         <BBPicHolder title="Javascript" src="js.png"/>
@@ -118,13 +155,37 @@ export default function App(){
                         <BBPicHolder title="Android Studio" src="android.png"/>
                     </TypeBody>
 
-                    <HeadsOne text="Soft Skills" type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
+                    <HeadsOne text="And my Soft Skills (Personality)..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
                     <BoxBody type="BG">
-                        <HeadsOne text={defText} type="h3" objectStyle={{color: "#c7c7c7"}}/>
+                        <HeadsOne text={mySoftSkills} type="h3" objectStyle={{color: "#c7c7c7"}}/>
                     </BoxBody>
                 </>
             ) : (
                 <>
+                    <HeadsOne text="Velone Card Background" type="h3" objectStyle={{textAlign: "center"}}/>
+                    <BoxBody type="BG">
+                        <TypeBody type={"grid"} objectStyle={{"--gMin": "75px"}}>
+                        </TypeBody>
+                    </BoxBody>
+
+                    <HeadsOne text="Velone Cards" type="h3" objectStyle={{textAlign: "center"}}/>
+                    <BoxBody type="BG">
+                        <TypeBody type={"grid"} objectStyle={{"--gMin": "75px"}}>
+                        </TypeBody>
+                    </BoxBody>
+
+                    <HeadsOne text="Velone Input Text" type="h3" objectStyle={{textAlign: "center"}}/>
+                    <BoxBody type="BG">
+                        <TypeBody type={"grid"} objectStyle={{"--gMin": "75px"}}>
+                        </TypeBody>
+                    </BoxBody>
+
+                    <HeadsOne text="Velone Buttons" type="h3" objectStyle={{textAlign: "center"}}/>
+                    <BoxBody type="BG">
+                        <TypeBody type={"grid"} objectStyle={{"--gMin": "75px"}}>
+                        </TypeBody>
+                    </BoxBody>
+
                     <HeadsOne text="VelOne Icons" type="h3" objectStyle={{textAlign: "center"}}/>
                     <BoxBody type="BG">
                         <TypeBody type={"grid"} objectStyle={{"--gMin": "75px"}}>
