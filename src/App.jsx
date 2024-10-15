@@ -6,6 +6,7 @@ import BoxBody from './VelOne/components/box_body.jsx'
 import HeadsOne from './VelOne/components/h1.jsx'
 import TypeBody from './VelOne/components/body_type.jsx'
 import BBPicHolder from './VelOne/components/body_box_picture_holder.jsx'
+import ListCards from './VelOne/components/list_cards.jsx'
 import './VelOne/crookwork.css'
 import React, { useState, useEffect} from 'react'
 
@@ -31,8 +32,8 @@ export default function App(){
     const myProfile = "Recent graduate of Bachelor's of Science in Information Technology. Skilled in using vanilla CSS, HTML, JS, and PHP with the help of XAMPP. Currently studying React JS and trying to create my own styles, starting with icons using SVG paths.";
     const myContacts = ["telephone/~/09266153663", "telephone/~/0993591749", "atEmail/~/jeanpakingan990@gmail.com",
                         "globe/~/My Facebook/~/https://www.facebook.com/Lvl1Crook/", "globe/~/My Linked In/~/https://www.linkedin.com/in/jean-cyrus-pakingan-a05264323/"];
-    const myEducation = ["Senior High School - PMMS Las Piñas/~/Science, Technology, Engineering, and Mathematics (STEM)/~/2018-2020", "College - STI College Bacoor/~/Bachelor of Science in Information Technology (BSIT)/~/2020-2024"];
-    const myWorkExperience = ["Full-Stack Developer - Land Transportation Office (LTO) Bacoor District Office/~/Created a file management system in order for a faster file locating within file shelfs, booking system for files, archiving, and more./~/Feb 2024 - May 2024"];
+    const myEducation = ["Senior High School - PMMS Las Piñas/~/Science, Technology, Engineering, and Mathematics (STEM)/~/2018-2020/~/pmms.png", "College - STI College Bacoor/~/Bachelor of Science in Information Technology (BSIT)/~/2020-2024/~/sti.png"];
+    const myWorkExperience = ["Full-Stack Developer - Land Transportation Office (LTO) Bacoor District Office/~/Created a file management system in order for a faster file locating within file shelfs, booking system for files, archiving, and more./~/Feb 2024 - May 2024/~/lto.png"];
     const mySoftSkills = "Hello World! ❤️❤️❤️";
 
     //FOR THE INFORMATIONS!
@@ -43,7 +44,7 @@ export default function App(){
                 {myContacts.map((contVals, keys) => {
                     const iconValAry = contVals.split("/~/");
                     return(
-                        <BoxBody type="Bor">
+                        <BoxBody type="Bor" key={keys}>
                             <TypeBody type="frow">
                                 <BtnIcons type={iconValAry[0]} Mar={10} HW={25} iconOnly={true} objectStyle={{"--BGC": "white", "--BGP" : "transparent"}}/>
                                 {iconValAry[0] == "globe" ? (
@@ -67,32 +68,6 @@ export default function App(){
         );
     }
 
-    const showList = (listArray) => {
-        const dividerLi = (key) => {
-            if(key !== 0){
-                return(
-                    <BoxBody type="BG" objectStyle={{padding: "1px", "--whiteBg" : "var(--grayBg)", margin : "5px"}}></BoxBody>
-                );
-            }
-        }
-        return(
-            <>
-                {listArray.map((list, key) => {
-                    const listSlice = list.split("/~/");
-                    return(
-                        <>
-                            {dividerLi(key)}
-                            <li style={{margin: "5px 10px", textDecoration: "underline", fontSize: "20px"}}>
-                                {listSlice[0]}
-                            </li>
-                            <HeadsOne text={listSlice[1]} type="h4" objectStyle={{color: "white", fontSize: "14px", flex: "1", padding: "2px 37px 2px 37px"}}/>
-                            <HeadsOne text={listSlice[2]} type="p" objectStyle={{color:  "#c7c7c7", fontSize: "12px", flex: "1", padding: "2px 37px 5px 37px", fontWeight: "none"}}/>
-                        </>
-                    );
-                })}
-            </>
-        );
-    }
     let [getHash, setHash] = useState("");
     useEffect(() => {
         if (!window.location.hash) {
@@ -132,12 +107,12 @@ export default function App(){
 
                     <HeadsOne text="This is my educational background..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
                     <BoxBody type="BGSha">
-                        {showList(myEducation)}
+                        <ListCards CardType={"pic_1"} infoArray={myEducation}/>
                     </BoxBody>
 
                     <HeadsOne text="Here are my work experience/s..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
                     <BoxBody type="BGSha">
-                        {showList(myWorkExperience)}
+                        <ListCards CardType={"pic_1"} infoArray={myWorkExperience}/>
                     </BoxBody>
 
                     <HeadsOne text="These are my Hard Skills..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
