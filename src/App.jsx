@@ -90,7 +90,7 @@ export default function App(){
     <>
         <Header logo="./crookwork.png" itemsAry={["Home", "My Styles", "Request"]}/>
         <div className='middle_body'>
-            <TypeBody addId="Home" type="fcol" bWidth={"900px"} objectStyle={{padding: "10px 0px 0px 0px", margin: "0px 10px"}}>
+            <TypeBody type="fcol" bWidth={"900px"} objectStyle={{padding: "10px 0px 0px 0px", margin: "0px 10px"}}>
             {getHash == "Home" ? (
                 <>
                     {/* PROFILE INTRODUCE */}
