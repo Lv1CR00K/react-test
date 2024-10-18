@@ -6,7 +6,7 @@ import BoxBody from './VelOne/components/box_body.jsx'
 import HeadsOne from './VelOne/components/h1.jsx'
 import TypeBody from './VelOne/components/body_type.jsx'
 import BBPicHolder from './VelOne/components/body_box_picture_holder.jsx'
-import ListCards from './VelOne/components/list_cards.jsx'
+import ListCards from './VelOne/components/cards.jsx'
 import './VelOne/crookwork.css'
 import React, { useState, useEffect} from 'react'
 
@@ -37,6 +37,11 @@ export default function App(){
     const mySoftSkills = "Hello World! ❤️❤️❤️";
 
     //FOR THE INFORMATIONS!
+
+    //FOR THE REPEAT
+    const cardBackground = ["BGSha/~/Background with Shadow", "BG/~/Background", "BorBGSha/~/Background with Border and Shadow", "BorBG/~/Background with Border", "Bor/~/Border"]
+    const myEducationSample = ["Junior High Scool - BUES/~/Grade 7 - 10/~/2014-2018/~/bues.png", "Senior High School - PMMS Las Piñas/~/Science, Technology, Engineering, and Mathematics (STEM)/~/2018-2020/~/pmms.png", "College - STI College Bacoor/~/Bachelor of Science in Information Technology (BSIT)/~/2020-2024/~/sti.png"];
+    //FOR THE REPEAT
 
     const aboutMe = () => {
         return(
@@ -79,9 +84,11 @@ export default function App(){
         }
         window.addEventListener('hashchange', handleHashChange);
     });
+
+    
     return (
     <>
-        <Header logo="./crookwork.png" itemsAry={["Home", "My Styles"]}/>
+        <Header logo="./crookwork.png" itemsAry={["Home", "My Styles", "Request"]}/>
         <div className='middle_body'>
             <TypeBody addId="Home" type="fcol" bWidth={"900px"} objectStyle={{padding: "10px 0px 0px 0px", margin: "0px 10px"}}>
             {getHash == "Home" ? (
@@ -106,14 +113,10 @@ export default function App(){
                     </BoxBody>
 
                     <HeadsOne text="This is my educational background..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
-                    <BoxBody type="BGSha">
-                        <ListCards CardType={"pic_1"} infoArray={myEducation}/>
-                    </BoxBody>
+                    <ListCards BoxBodyType="BGSha" CardType={"List_Pic_1"} infoArray={myEducation}/>
 
                     <HeadsOne text="Here are my work experience/s..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
-                    <BoxBody type="BGSha">
-                        <ListCards CardType={"pic_1"} infoArray={myWorkExperience}/>
-                    </BoxBody>
+                    <ListCards BoxBodyType="BGSha" CardType={"List_Pic_1"} infoArray={myWorkExperience}/>
 
                     <HeadsOne text="These are my Hard Skills..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
                     <TypeBody type="grid" objectStyle={{padding: "0px"}}>
@@ -135,16 +138,29 @@ export default function App(){
                         <HeadsOne text={mySoftSkills} type="h3" objectStyle={{color: "#c7c7c7"}}/>
                     </BoxBody>
                 </>
-            ) : (
+            ) : getHash == "My Styles" ? (
                 <>
                     <HeadsOne text="Velone Card Background" type="h3" objectStyle={{textAlign: "center"}}/>
-                    <BoxBody type="BG">
-                        <TypeBody type={"grid"} objectStyle={{"--gMin": "75px"}}>
+                    <BoxBody type="Bor">
+                        <TypeBody type={"grid"} objectStyle={{"--gMin": "220px"}}>
+                            <ListCards BoxBodyType="BGSha" CardType={"Card_1"} infoArray={cardBackground} objectStyle={{height : "100px"}}/>
                         </TypeBody>
                     </BoxBody>
 
+                    <HeadsOne text="Velone Lists" type="h3" objectStyle={{textAlign: "center"}}/>
+                    <BoxBody type="Bor">
+                        <HeadsOne text="List Bullet 1" type="h3" objectStyle={{textAlign: "left", margin: "20px 10px 0px 10px", fontSize: "16px"}}/>
+                        <ListCards BoxBodyType="BGSha" CardType={"List_Bullet_1"} infoArray={myEducationSample}/>
+
+                        <HeadsOne text="List No Picture 1" type="h3" objectStyle={{textAlign: "left", margin: "20px 10px 0px 10px", fontSize: "16px"}}/>
+                        <ListCards BoxBodyType="BGSha" CardType={"List_NoPic_1"} infoArray={myEducationSample}/>
+
+                        <HeadsOne text="List Picture 1" type="h3" objectStyle={{textAlign: "left", margin: "20px 10px 0px 10px", fontSize: "16px"}}/>
+                        <ListCards BoxBodyType="BGSha" CardType={"List_Pic_1"} infoArray={myEducationSample}/>
+                    </BoxBody>
+
                     <HeadsOne text="Velone Cards" type="h3" objectStyle={{textAlign: "center"}}/>
-                    <BoxBody type="BG">
+                    <BoxBody type="Bor">
                         <TypeBody type={"grid"} objectStyle={{"--gMin": "75px"}}>
                         </TypeBody>
                     </BoxBody>
@@ -167,6 +183,9 @@ export default function App(){
                             {arrayOfIcons()}
                         </TypeBody>
                     </BoxBody>
+                </>
+            ) : (
+                <>
                 </>
             )}
             <div style={{padding: "2.5px"}}></div>
