@@ -36,6 +36,21 @@ header{
     display: none;
 }
 /* HEADER */
+
+/* FOOTER */
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: calc(100vw - 40px);
+    background-color: var(--whiteBg);
+    color: var(--txtColD);
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+}
+/* FOOTER */
 .img_pfp{
     width: 220px;
     border-radius: 10px; 

@@ -34,7 +34,16 @@ export default function App(){
                         "globe/~/My Facebook/~/https://www.facebook.com/Lvl1Crook/", "globe/~/My Linked In/~/https://www.linkedin.com/in/jean-cyrus-pakingan-a05264323/"];
     const myEducation = ["Senior High School - PMMS Las Piñas/~/Science, Technology, Engineering, and Mathematics (STEM)/~/2018-2020/~/pmms.png", "College - STI College Bacoor/~/Bachelor of Science in Information Technology (BSIT)/~/2020-2024/~/sti.png"];
     const myWorkExperience = ["Full-Stack Developer - Land Transportation Office (LTO) Bacoor District Office/~/Created a file management system in order for a faster file locating within file shelfs, booking system for files, archiving, and more./~/Feb 2024 - May 2024/~/lto.png"];
-    const mySoftSkills = "Hello World! ❤️❤️❤️";
+    const mySoftSkills = [
+        {id: 1, name: 'Computer Literate'},
+        {id: 2, name: 'Problem Solving'},
+        {id: 3, name: 'Critical Thinking'},
+        {id: 4, name: 'Fast Learner'},
+        {id: 5, name: 'Hardworking'},
+        {id: 6, name: 'Responsible'},
+        {id: 7, name: 'Creative'},
+        {id: 8, name: 'Flexible'}
+    ];
 
     //FOR THE INFORMATIONS!
 
@@ -42,6 +51,20 @@ export default function App(){
     const cardBackground = ["BGSha/~/Background with Shadow", "BG/~/Background", "BorBGSha/~/Background with Border and Shadow", "BorBG/~/Background with Border", "Bor/~/Border"]
     const myEducationSample = ["Junior High Scool - BUES/~/Grade 7 - 10/~/2014-2018/~/bues.png", "Senior High School - PMMS Las Piñas/~/Science, Technology, Engineering, and Mathematics (STEM)/~/2018-2020/~/pmms.png", "College - STI College Bacoor/~/Bachelor of Science in Information Technology (BSIT)/~/2020-2024/~/sti.png"];
     //FOR THE REPEAT
+
+    //FOR SOFT SKILLS
+    const softSkills = () => {
+        return(
+            <>
+                {mySoftSkills.map(item => (
+                    <BoxBody type="Bor" key={item.id} objectStyle={{borderWidth: "1px", padding: "10px"}}>
+                        <li style={{fontSize : "15px"}}>{item.name}</li>
+                    </BoxBody>
+                ))}
+            </>
+        );
+    }
+    //FOR SOFT SKILLS
 
     const aboutMe = () => {
         return(
@@ -88,7 +111,7 @@ export default function App(){
     
     return (
     <>
-        <Header logo="./crookwork.png" itemsAry={["Home", "My Styles", "Request"]}/>
+        <Header logo="./crookwork.png" itemsAry={["Home", "My Styles"]}/>
         <div className='middle_body'>
             <TypeBody type="fcol" bWidth={"900px"} objectStyle={{padding: "10px 0px 0px 0px", margin: "0px 10px"}}>
             {getHash == "Home" ? (
@@ -115,7 +138,7 @@ export default function App(){
                     <HeadsOne text="This is my educational background..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
                     <ListCards BoxBodyType="BGSha" CardType={"List_Pic_1"} infoArray={myEducation}/>
 
-                    <HeadsOne text="Here are my work experience/s..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
+                    <HeadsOne text="Here's my work exposure..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
                     <ListCards BoxBodyType="BGSha" CardType={"List_Pic_1"} infoArray={myWorkExperience}/>
 
                     <HeadsOne text="These are my Hard Skills..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
@@ -135,7 +158,9 @@ export default function App(){
 
                     <HeadsOne text="And my Soft Skills (Personality)..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
                     <BoxBody type="BG">
-                        <HeadsOne text={mySoftSkills} type="h3" objectStyle={{color: "#c7c7c7"}}/>
+                        <TypeBody type="grid" objectStyle={{padding: "0px", "--gMin": "250px"}}>
+                            {softSkills()}
+                        </TypeBody>
                     </BoxBody>
                 </>
             ) : getHash == "My Styles" ? (
@@ -159,7 +184,7 @@ export default function App(){
                         <ListCards BoxBodyType="BGSha" CardType={"List_Pic_1"} infoArray={myEducationSample}/>
                     </BoxBody>
 
-                    <HeadsOne text="Velone Cards" type="h3" objectStyle={{textAlign: "center"}}/>
+                    {/* <HeadsOne text="Velone Cards" type="h3" objectStyle={{textAlign: "center"}}/>
                     <BoxBody type="Bor">
                         <TypeBody type={"grid"} objectStyle={{"--gMin": "75px"}}>
                         </TypeBody>
@@ -175,7 +200,7 @@ export default function App(){
                     <BoxBody type="BG">
                         <TypeBody type={"grid"} objectStyle={{"--gMin": "75px"}}>
                         </TypeBody>
-                    </BoxBody>
+                    </BoxBody> */}
 
                     <HeadsOne text="VelOne Icons" type="h3" objectStyle={{textAlign: "center"}}/>
                     <BoxBody type="BG">
@@ -189,9 +214,10 @@ export default function App(){
                 </>
             )}
             <div style={{padding: "2.5px"}}></div>
+            
+            <Footer />
             </TypeBody>
         </div>
-        <Footer />
     </>
     );
 }
