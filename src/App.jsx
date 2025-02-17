@@ -128,12 +128,12 @@ export default function App(){
                         </TypeBody>
                     </BoxBody>
 
-                    <HeadsOne text="You can contact me through..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px", scrollMarginTop: "60px"}}/>
+                    {/* <HeadsOne text="You can contact me through..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px", scrollMarginTop: "60px"}}/>
                     <BoxBody type="BG">
                         <TypeBody type={"grid"} objectStyle={{"--gMin": "300px"}}>
                             {aboutMe()}
                         </TypeBody>
-                    </BoxBody>
+                    </BoxBody> */}
 
                     <HeadsOne text="This is my educational background..." type="h3" objectStyle={{textAlign: "center", marginTop: "20px"}}/>
                     <ListCards BoxBodyType="BGSha" CardType={"List_Pic_1"} infoArray={myEducation}/>
