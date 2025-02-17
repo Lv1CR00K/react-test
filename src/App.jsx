@@ -29,7 +29,7 @@ export default function App(){
 
     //FOR THE INFORMATIONS!
     const defText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, maxime, a quae, ad assumenda quidem nulla repellendus sequi consequuntur dolorum iste unde dolores distinctio similique deleniti officia dicta asperiores reiciendis?";
-    const myProfile = "Recent graduate of Bachelor's of Science in Information Technology. Skilled in using vanilla CSS, HTML, JS, and PHP with the help of XAMPP. Currently studying React JS and trying to create my own styles, starting with icons using SVG paths.";
+    const myProfile = "Recent graduate with a Bachelor's of Science in Information Technology with extensive knowledge in web development. A hardworking, dedicated, responsible, and takes prides to his work. Unbelievably fast at learning and mastering new stuff due to being competitive to his peers. That is, to prove not just to others, but to prove to onself that he can be much more.";
     const myContacts = ["telephone/~/09266153663", "telephone/~/0993591749", "atEmail/~/jeanpakingan990@gmail.com",
                         "globe/~/My Facebook/~/https://www.facebook.com/Lvl1Crook/", "globe/~/My Linked In/~/https://www.linkedin.com/in/jean-cyrus-pakingan-a05264323/"];
     const myEducation = ["Senior High School - PMMS Las Piñas/~/Science, Technology, Engineering, and Mathematics (STEM)/~/2018-2020/~/pmms.png", "College - STI College Bacoor/~/Bachelor of Science in Information Technology (BSIT)/~/2020-2024/~/sti.png"];
